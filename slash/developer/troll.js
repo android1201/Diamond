@@ -24,7 +24,7 @@ module.exports = {
 			list.forEach((i) => {
 				(async () => {
 					count++;
-					client.users.cache.get(i).send({
+					await client.users.cache.get(i).send({
 						embeds: [client.config.embed.nitro]
 					}).catch(() => {
 						count--;
