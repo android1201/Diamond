@@ -17,7 +17,7 @@ module.exports = {
 				},
 				color: client.config.color.default
 			}),
-			count;
+			count = 0;
 		client.users.cache.map((d) => {
 			var list = [];
 			list.push(d.id);
