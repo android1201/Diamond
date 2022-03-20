@@ -99,14 +99,12 @@ client.login(client.config.bot.token);
 /*
  * Error handling
  */
-/*
 process.on('unhandledRejection', (err) => {
 	console.error(`Unhandled Rejection: ${err}`);
 });
 process.on('uncaughtException', (err) => {
 	console.error(`Uncaught Exception: ${err}`);
 });
-*/
 /*
  * Schema
  */
