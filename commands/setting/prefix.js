@@ -20,7 +20,7 @@ module.exports = {
 			params = {
 				_id: message.author.id
 			},
-			schemaData = await client.userSchema.findOne(params);
+			schemaData = await client.db.get(`user${message.author.id}`);
 		if (!argData) {
 			if (schemaData) {
 				if (schemaData.prefix) {
@@ -45,16 +45,10 @@ module.exports = {
 			});
 		}
 		if (argData) {
-			client.userSchema.findOne(params, async (err, data) => {
-				if (data) {
-					data.prefix = argData;
-					await client.userSchema.findOneAndUpdate(params, data);
-				} else {
-					await new client.userSchema({
-						_id: message.author.id,
-						prefix: defaultPrefix
-					}).save();
-				}
+			new client.config.class.user({
+				client: client,
+				id: message.author.id,
+				prefix: argData
 			});
 			embed.setColor(client.config.color.success)
 				.setDescription(`\`\`\`\n${client.config.emoji.success} Hey buddy, your prefix successfully updated to ${argData}\`\`\``);
@@ -63,4 +57,4 @@ module.exports = {
 			});
 		}
 	}
-}
+};
