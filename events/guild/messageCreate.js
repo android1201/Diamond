@@ -39,7 +39,7 @@ module.exports = async (client,
 	 * schemaData
 	 */
 	var prefix;
-	var guildData = await client.db.get(`guild${message.guild.id}`);,
+	var guildData = await client.db.get(`guild${message.guild.id}`),
 		userData = await client.db.get(`user${message.author.id}`);
 	/*
 	 * guildSchema
