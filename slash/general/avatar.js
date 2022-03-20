@@ -1,6 +1,7 @@
 module.exports = {
 	name: 'avatar',
 	description: 'Get user or own avatar.',
+	botChannelPermissions: ["EMBED_LINKS", "SEND_MESSAGES"],
 	options: [{
 		name: 'user',
 		description: 'User to get avatar',
