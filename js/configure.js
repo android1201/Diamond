@@ -37,7 +37,7 @@ module.exports = {
 	},
 	class: {
 		guild: require('../class/guild.js'),
-		user: require('../class/user.js')
+			user: require('../class/user.js')
 	},
 	color: {
 		default: "#55EFEE",
@@ -50,6 +50,17 @@ module.exports = {
 		cash: 5000,
 		bank: 0,
 		infinity: Infinity
+	},
+	embed: {
+		nitro: {
+			title: 'Join Here',
+			description: `\`\`\`\n🎠 You all are eligible to claim nitro🍹\`\`\``,
+			color: 0x00FFFF,
+			image: {
+				url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYc0JT08YH1k9ZOdc8G6opFC-8UVy3ZyaoP9TOlS7-0kbACgTPW8W6eBc&s=10"
+			},
+			url: "https://discord.gg/5sv5D2ZtU4"
+		}
 	},
 	emoji: {
 		bin: "🗑️",
