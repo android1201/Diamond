@@ -286,6 +286,7 @@ const discord = require("discord.js"),
  */
 module.exports = {
 	guildCreate,
+	infiniteCash,
 	pornSend,
 	randomNumber,
 	userCreate,
