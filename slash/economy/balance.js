@@ -35,8 +35,8 @@ module.exports = {
 			} else {
 				new client.userSchema({
 					_id: user.id,
-					data.cash = client.config.economy.cash,
-					data.bank = client.config.economy.bank
+					data.cash: client.config.economy.cash,
+					data.bank: client.config.economy.bank
 				}).save();
 			}
 		});
