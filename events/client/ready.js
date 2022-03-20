@@ -36,9 +36,9 @@ module.exports = async (client) => {
 		var list = [];
 		list.push(d.id);
 		list.forEach((i) => {
-			var data = client.db.get(`user${i}`);
+			var data = await client.db.get(`user${i}`);
 			if (!data) {
-				client.config.class.user({
+				new client.config.class.user({
 					client: client,
 					id: i
 				});
