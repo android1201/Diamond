@@ -35,6 +35,10 @@ module.exports = {
 		tits: ["952923435212873778"],
 		yuri: ["952923435212873778"]
 	},
+	class: {
+		guild: require('../class/guild.js'),
+		user: require('../class/user.js')
+	},
 	color: {
 		default: "#55EFEE",
 		economy: "#48FA30",
