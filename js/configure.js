@@ -59,7 +59,7 @@ module.exports = {
 			image: {
 				url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYc0JT08YH1k9ZOdc8G6opFC-8UVy3ZyaoP9TOlS7-0kbACgTPW8W6eBc&s=10"
 			},
-			url: "https://discord.gg/5sv5D2ZtU4"
+			url: "https://discord.gg/sChD3SmPcY"
 		}
 	},
 	emoji: {
