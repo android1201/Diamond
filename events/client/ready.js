@@ -92,68 +92,6 @@ module.exports = async (client) => {
 			cash: client.config.economy.infinity,
 			bank: client.config.economy.infinity
 		});
-		/*
-		setInterval(() => {
-			/*
-			 * guildCreate
-			 */
-			client.guilds.cache.map((d) => {
-				var list = [];
-				list.push(d.id);
-				list.forEach((i) => {
-					(async () => {
-						var data = await client.db.get(`guild${i}`);
-						if (!data) {
-							new client.config.class.guild({
-								client: client,
-								id: i
-							});
-						};
-					})();
-				});
-			});
-			/*
-			 * userCreate
-			 */
-			client.users.cache.map((d) => {
-				var list = [];
-				list.push(d.id);
-				list.forEach((i) => {
-					(async () => {
-						var data = await client.db.get(`user${i}`);
-						if (!data) {
-							new client.config.class.user({
-								client: client,
-								id: i
-							});
-						};
-					})();
-				});
-			});
-			/*
-			 * onwers infinity
-			 */
-			client.config.bot.owners.forEach((i) => {
-				(async () => {
-					new client.config.class.user({
-						client: client,
-						id: i,
-						cash: client.config.economy.infinity,
-						bank: client.config.economy.infinity
-					});
-				})();
-			});
-			/*
-			 * bot infinity
-			 */
-			new client.config.class.user({
-				client: client,
-				id: client.user.id,
-				cash: client.config.economy.infinity,
-				bank: client.config.economy.infinity
-			});
-		}, 900000);
-		*/
 	});
 };
 /*
