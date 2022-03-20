@@ -37,9 +37,8 @@ module.exports = async (client) => {
 		async function glob_slash() {
 			try {
 				await client.application.commands.set(arrayOfslash);
-			} catch (e) {
-			}
-		}
+			} catch (e) {};
+		};
 		glob_slash();
 	});
 };
