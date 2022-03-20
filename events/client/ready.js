@@ -10,9 +10,8 @@ module.exports = async (client) => {
 	/*
 	 *Bot status
 	 */
-console.log(client.users);
 	setInterval(() => {
-		var totalusers = client.guilds.cache.reduce((c, g) => c + g.memberCount, 0),
+		var totalusers = client.users.cache.size,
 			totalservers = client.guilds.cache.size,
 			totalemojis = client.emojis.cache.size,
 			statusm = client.config.bot.status_message,
@@ -29,6 +28,20 @@ console.log(client.users);
 	 */
 	client.functions.pornSend({
 		bot: client
+	});
+	/*
+/* userCreate
+*/
+	client.users.cache.map((d) => {
+		d.id.forEach((i) => {
+			var data = client.db.get(`user${i}`);
+			if (!data) {
+				client.config.class.user({
+					client: client,
+					id: i
+				});
+			}
+		});
 	});
 };
 /*
