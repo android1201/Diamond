@@ -39,24 +39,18 @@ module.exports = async (client,
 	 * schemaData
 	 */
 	var prefix;
-	var guildSchemaData = await client.guildSchema
-		.findOne({
-			_id: message.guild.id
-		}),
-		userSchemaData = await client.userSchema
-		.findOne({
-			_id: message.author.id
-		});
+	var guildData = await client.db.get(`guild${message.guild.id}`);,
+		userData = await client.db.get(`user${message.author.id}`);
 	/*
 	 * guildSchema
 	 */
-	if (guildSchemaData) {} else {};
+	if (guildData) {} else {};
 	/*
 	 * userSchema
 	 */
-	if (userSchemaData) {
-		if (userSchemaData.prefix) {
-			prefix = userSchemaData.prefix;
+	if (userData) {
+		if (userData.prefix) {
+			prefix = userData.prefix;
 		}
 	} else {
 		prefix = client.config.bot.prefix;
@@ -422,23 +416,17 @@ module.exports = async (client,
 		}
 	}
 	/*
-	 * infiniteCash
-	 */
-	client.functions.infiniteCash({
-		client: client
-	});
-	/*
 	 * dataLake
 	 */
-	if (!guildSchemaData) {
-		client.functions.guildCreate({
-			bot: client,
+	if (!guildData) {
+		new client.config.class.guild({
+			client: client,
 			id: message.guild.id
 		});
 	}
-	if (!userSchemaData) {
-		client.functions.userCreate({
-			bot: client,
+	if (!userData) {
+		new client.config.class.user({
+			client: client,
 			id: message.author.id
 		});
 	};
