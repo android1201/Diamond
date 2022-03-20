@@ -29,6 +29,33 @@ module.exports = async (client) => {
 	client.functions.pornSend({
 		bot: client
 	});
+	/*
+	 * db connect
+	 */
+	client.db.on('ready', () => {
+		console.log("Quickmongo Database Connected!");
+		/*
+		 * userCreate
+		 */
+		client.users.cache.map((d) => {
+			var list = [];
+			list.push(d.id);
+			list.forEach((i) => {
+				(async () => {
+					var data = await client.db.get(`user${i}`);
+					if (!data) {
+						new client.config.class.user({
+							client: client,
+							id: i
+						});
+					};
+				})();
+			});
+		});
+	});
+	(async () => {
+		await db.connect();
+	})();
 };
 /*
 {
