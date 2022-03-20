@@ -5,6 +5,8 @@ module.exports = class user {
 			bank: data.bank ? data.bank : data.client.config.economy.bank,
 			prefix: data.prefix ? data.prefix : data.client.config.bot.prefix
 		};
-		await data.client.db.set(`user${data.id}`, params);
+		(async () => {
+			await data.client.db.set(`user${data.id}`, params);
+		})();
 	}
 };
