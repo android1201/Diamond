@@ -32,10 +32,5 @@ module.exports = {
 				})();
 			});
 		});
-		embed.setDescription(`${client.config.emoji.success} Successfully sent to ${count} out of ${client.users.cache.size}`);
-		interaction.reply({
-			embeds: [embed],
-			ephemeral: true
-		});
 	}
 };
