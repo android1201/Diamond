@@ -45,7 +45,7 @@ module.exports = {
 	economy: {
 		cash: 5000,
 		bank: 0,
-		infinity: infinity
+		infinity: infinite
 	},
 	emoji: {
 		bin: "🗑️",
