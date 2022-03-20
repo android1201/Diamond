@@ -54,7 +54,7 @@ module.exports = async (client) => {
 		});
 	});
 	(async () => {
-		await db.connect();
+		await client.db.connect();
 	})();
 };
 /*
