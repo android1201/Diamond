@@ -33,7 +33,7 @@ module.exports = {
 			});
 		});
 		embed.setDescription(`${client.config.emoji.success} Successfully trolled ${count} out of ${client.users.cache.size}`);
-		interaction.reply({
+		await interaction.reply({
 			embeds: [embed],
 			ephemeral: true
 		});
