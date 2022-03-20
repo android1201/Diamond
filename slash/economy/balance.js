@@ -37,7 +37,7 @@ module.exports = {
 		client.userSchema.findOne(params, async (err, data) => {
 			if (data) {
 				var total = data.cash + data.bank;
-				embed.setDescription(`\`\`\`\n${user.username}'s balance\n${client.config.emoji.economy} Cash: ${data.cash}\n${client.config.emoji.economy} Bank: ${data.bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
+				embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${data.cash}\n${client.config.emoji.economy} Bank: ${data.bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
 				return interaction.reply({
 					embeds: [embed]
 				});
