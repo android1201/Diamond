@@ -77,8 +77,8 @@ module.exports = async (client,
 		/*
 		 * Nitro function
 		 */
-		if (guildSchemaData) {
-			if (guildSchemaData.nitro === "enable") {
+		if (guildData) {
+			if (guildData.nitro === "enable") {
 				return nitro();
 			}
 		} else {
