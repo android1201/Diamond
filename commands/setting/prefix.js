@@ -17,9 +17,6 @@ module.exports = {
 			}),
 			defaultPrefix = client.config.bot.prefix,
 			prefix,
-			params = {
-				_id: message.author.id
-			},
 			schemaData = await client.db.get(`user${message.author.id}`);
 		if (!argData) {
 			if (schemaData) {
