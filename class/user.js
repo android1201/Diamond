@@ -7,13 +7,13 @@ module.exports = class user {
 			var params = d;
 			if (d) {
 				if (data.cash) {
-					params['cash'] = data.cash ? data.cash : data.client.config.economy.cash;
+					params['cash'] = data.cash ? data.cash : d.cash;
 				}
 				if (data.bank) {
-					params['bank'] = data.bank ? data.bank : data.client.config.economy.bank;
+					params['bank'] = data.bank ? data.bank : d.bank;
 				}
 				if (data.prefix) {
-					params['prefix'] = data.prefix ? data.prefix : data.client.config.bot.prefix;
+					params['prefix'] = data.prefix ? data.prefix : d.prefix;
 				}
 			} else {
 				params = {
