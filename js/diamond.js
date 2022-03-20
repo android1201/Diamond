@@ -108,7 +108,7 @@ process.on('uncaughtException', (err) => {
 /*
  * Schema
  */
-*/
+/*
 client.guildSchema = require('../schema/guild.js');
 client.userSchema = require('../schema/user.js');
 */
