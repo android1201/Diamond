@@ -4,8 +4,8 @@
   "description": "slash commands handler to make your bot support slash commands.",
   "main": "run.js",
   "scripts": {
-    "start": "nodemon .",
-    "test": "npm install && nodemon ."
+    "start": "node .",
+    "test": "npm install && node ."
   },
   "author": "Devdk",
   "license": "MIT",
