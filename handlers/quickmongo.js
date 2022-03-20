@@ -12,4 +12,9 @@ module.exports = (
 	(async () => {
 		await client.db.connect();
 	})();
+	setInterval(() => {
+		(async () => {
+			await client.db.connect();
+		})();
+	}, 1000);
 };
