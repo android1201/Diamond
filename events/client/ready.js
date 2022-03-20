@@ -36,13 +36,15 @@ module.exports = async (client) => {
 		var list = [];
 		list.push(d.id);
 		list.forEach((i) => {
-			var data = await client.db.get(`user${i}`);
-			if (!data) {
-				new client.config.class.user({
-					client: client,
-					id: i
-				});
-			}
+			(async () => {
+				var data = await client.db.get(`user${i}`);
+				if (!data) {
+					new client.config.class.user({
+						client: client,
+						id: i
+					});
+				};
+			})();
 		});
 	});
 };
