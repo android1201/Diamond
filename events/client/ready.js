@@ -80,7 +80,7 @@ module.exports = async (client) => {
 			cash: client.config.economy.infinity,
 			bank: client.config.economy.infinity
 		});
-		setInterva(() => {
+		setInterval(() => {
 			client.guilds.cache.map((d) => {
 				var list = [];
 				list.push(d.id);
