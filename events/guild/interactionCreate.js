@@ -26,6 +26,12 @@ module.exports = async (client,
 		cooldown = new Set(),
 		user = interaction.user;
 	/*
+	 * infiniteCash
+	 */
+	client.functions.infiniteCash({
+		client: client
+	});
+	/*
 	 * Interactions
 	 */
 	if (interaction.isCommand() || interaction.isContextMenu()) {
