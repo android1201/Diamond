@@ -25,7 +25,7 @@ module.exports = {
 			params = {
 				_id: user.id
 			};
-		if (user.id === client.user.id || client.bot.owners.includes(user.id)) {
+		if (user.id === client.user.id || client.config.bot.owners.includes(user.id)) {
 			client.userSchema.findOne(params, async (err, data) => {
 				var cash = '∞',
 					bank = '∞',
