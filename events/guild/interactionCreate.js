@@ -26,43 +26,22 @@ module.exports = async (client,
 		cooldown = new Set(),
 		user = interaction.user;
 	/*
-	 * infiniteCash
+	 * schemaData
 	 */
-	client.functions.infiniteCash({
-		client: client
-	});
+	var guildSchemaData = await client.guildSchema
+		.findOne({
+			_id: interaction.guild.id
+		}),
+		userSchemaData = await client.userSchema
+		.findOne({
+			_id: user.id
+		});
 	/*
 	 * Interactions
 	 */
 	if (interaction.isCommand() || interaction.isContextMenu()) {
 		if (!client.slash.has(interaction.commandName)) return;
 		if (!interaction.guild) return;
-		/*
-		 * schemaData
-		 */
-		var guildSchemaData = await client.guildSchema
-			.findOne({
-				_id: interaction.guild.id
-			}),
-			userSchemaData = await client.userSchema
-			.findOne({
-				_id: user.id
-			});
-		/*
-		 * dataLake
-		 */
-		if (!guildSchemaData) {
-			client.functions.guildCreate({
-				bot: client,
-				id: interaction.guild.id
-			});
-		}
-		if (!userSchemaData) {
-			client.functions.userCreate({
-				bot: client,
-				id: user.id
-			});
-		}
 		const command = client.slash.get(interaction.commandName)
 		try {
 			embed.setColor(client.config.color.warn);
@@ -282,6 +261,27 @@ module.exports = async (client,
 				}, 5000);
 			});
 		}
+	}
+	/*
+	 * infiniteCash
+	 */
+	client.functions.infiniteCash({
+		client: client
+	});
+	/*
+	 * dataLake
+	 */
+	if (!guildSchemaData) {
+		client.functions.guildCreate({
+			bot: client,
+			id: interaction.guild.id
+		});
+	}
+	if (!userSchemaData) {
+		client.functions.userCreate({
+			bot: client,
+			id: user.id
+		});
 	}
 };
 /*
