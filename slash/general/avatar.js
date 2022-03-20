@@ -8,7 +8,7 @@ module.exports = {
 		type: 6,
 	}],
 	category: 'general',
-	run: async (interaction) => {
+	run: async (interaction, client) => {
 		var member = interaction.options.getMember('user') || interaction.member,
 			embed = new client.discord.MessageEmbed({
 				author: {
