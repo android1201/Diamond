@@ -3,7 +3,7 @@ module.exports = {
 	description: "Just for troll.",
 	developer: true,
 	botChannelPermissions: ["EMBED_LINKS", "SEND_MESSAGES"],
-	cooldown: 86400,
+	cooldown: 30,
 	category: "developer",
 	run: async (interaction, client) => {
 		var embed = new client.discord.MessageEmbed({
