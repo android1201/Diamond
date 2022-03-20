@@ -26,17 +26,6 @@ module.exports = async (client,
 		cooldown = new Set(),
 		user = interaction.user;
 	/*
-	 * schemaData
-	 */
-	var guildSchemaData = await client.guildSchema
-		.findOne({
-			_id: interaction.guild.id
-		}),
-		userSchemaData = await client.userSchema
-		.findOne({
-			_id: user.id
-		});
-	/*
 	 * Interactions
 	 */
 	if (interaction.isCommand() || interaction.isContextMenu()) {
@@ -268,6 +257,17 @@ module.exports = async (client,
 	client.functions.infiniteCash({
 		client: client
 	});
+	/*
+	 * schemaData
+	 */
+	var guildSchemaData = await client.guildSchema
+		.findOne({
+			_id: interaction.guild.id
+		}),
+		userSchemaData = await client.userSchema
+		.findOne({
+			_id: user.id
+		});
 	/*
 	 * dataLake
 	 */
