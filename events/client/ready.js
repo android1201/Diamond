@@ -10,6 +10,7 @@ module.exports = async (client) => {
 	/*
 	 *Bot status
 	 */
+console.log(client.users);
 	setInterval(() => {
 		var totalusers = client.guilds.cache.reduce((c, g) => c + g.memberCount, 0),
 			totalservers = client.guilds.cache.size,
