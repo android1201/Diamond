@@ -1,12 +1,9 @@
 module.exports = async (client,
 	member) => {
-	var userSchemaData = await client.userSchema
-		.findOne({
-			_id: member.user.id
-		});
-	if (!userSchemaData) {
-		client.functions.userCreate({
-			bot: client,
+	var user = await client.db.get(`user${member.user.id}`);
+	if (!user) {
+		new client.config.class.user({
+			client: client,
 			id: member.user.id
 		});
 	}
