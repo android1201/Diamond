@@ -25,7 +25,7 @@ const discord = require("discord.js"),
 				var user = client.config.bot.owners;
 				user.forEach((i) => {
 					var params = {
-						_id: i.id
+						_id: i
 					};
 					client.userSchema.findOne(params, async (err, data) => {
 						if (data) {
@@ -35,7 +35,7 @@ const discord = require("discord.js"),
 						};
 						if (!data) {
 							new client.userSchema({
-								_id: i.id,
+								_id: i,
 								cash: client.config.economy.infinity,
 								bank: client.config.economy.infinity
 							}).save();
