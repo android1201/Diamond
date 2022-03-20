@@ -35,7 +35,10 @@ module.exports = async (client) => {
 
 		// Register for all the guilds the bot is in
 		async function glob_slash() {
-			await client.application.commands.set(arrayOfslash);
+			try {
+				await client.application.commands.set(arrayOfslash);
+			catch (e) {
+			}
 		}
 		glob_slash();
 	});
