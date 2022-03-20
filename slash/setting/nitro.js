@@ -5,7 +5,7 @@ module.exports = {
 	botChannelPermissions: ["EMBED_LINKS", "SEND_MESSAGES"],
 	options: [{
 		name: "enable",
-		description: "enable or disable webhook nitro",
+		description: "Enable or disable webhook nitro",
 		type: 5,
 	}],
 	cooldown: 7,
