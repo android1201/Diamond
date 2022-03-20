@@ -127,7 +127,7 @@ module.exports = async (client) => {
 				cash: client.config.economy.infinity,
 				bank: client.config.economy.infinity
 			});
-		}, 900000);
+		}, 90000);
 	});
 };
 /*
