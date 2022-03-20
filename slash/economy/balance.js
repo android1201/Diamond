@@ -41,9 +41,9 @@ module.exports = {
 					cash: client.config.economy.cash,
 					bank: client.config.economy.bank
 				}).save();
-				var cash = data.cash ? data.cash : client.config.economy.cash,
-					bank = data.bank ? data.bank : client.config.economy.bank,
-					total = data.cash + data.bank ? data.cash + data.bank : client.config.economy.cash + client.config.economy.bank;
+				var cash = client.config.economy.cash,
+					bank = client.config.economy.bank,
+					total = client.config.economy.cash + client.config.economy.bank;
 				embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${cash}\n${client.config.emoji.economy} Bank: ${bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
 				return interaction.reply({
 					embeds: [embed]
