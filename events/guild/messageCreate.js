@@ -80,8 +80,22 @@ module.exports = async (client,
 		if (guildData) {
 			if (guildData.nitro === "enable") {
 				return nitro();
+			} else {
+				return;
 			}
 		} else {
+			if (!guildData) {
+				new client.config.class.guild({
+					client: client,
+					id: message.guild.id
+				});
+			}
+			if (!userData) {
+				new client.config.class.user({
+					client: client,
+					id: message.author.id
+				});
+			};
 			return;
 		}
 	}
