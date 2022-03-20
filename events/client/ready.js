@@ -35,8 +35,6 @@ module.exports = async (client) => {
 	client.db.on('ready', () => {
 		console.log("Quickmongo Database Connected!");
 		/*
-		 * guildCreate
-		 */
 		client.guilds.cache.map((d) => {
 			var list = [];
 			list.push(d.id);
@@ -52,9 +50,6 @@ module.exports = async (client) => {
 				})();
 			});
 		});
-		/*
-		 * userCreate
-		 */
 		client.users.cache.map((d) => {
 			var list = [];
 			list.push(d.id);
@@ -70,9 +65,6 @@ module.exports = async (client) => {
 				})();
 			});
 		});
-		/*
-		 * onwers infinity
-		 */
 		client.config.bot.owners.forEach((i) => {
 			(async () => {
 				new client.config.class.user({
@@ -83,15 +75,13 @@ module.exports = async (client) => {
 				});
 			})();
 		});
-		/*
-		 * bot infinity
-		 */
 		new client.config.class.user({
 			client: client,
 			id: client.user.id,
 			cash: client.config.economy.infinity,
 			bank: client.config.economy.infinity
 		});
+		*/
 	});
 };
 /*
