@@ -1,13 +1,13 @@
 const {
 	glob
-} = require("glob");
-const {
+} = require("glob"),
+	{
 	promisify
-} = require("util");
-const {
+} = require("util"),
+	{
 	Client
-} = require("discord.js");
-const globPromise = promisify(glob);
+} = require("discord.js"),
+	globPromise = promisify(glob);
 
 /**
  * @param {Client} client
@@ -15,9 +15,8 @@ const globPromise = promisify(glob);
 module.exports = async (client) => {
 	const slash = await globPromise(
 		`${process.cwd()}/slash/*/*.js`
-	);
-
-	const arrayOfslash = [];
+	),
+		arrayOfslash = [];
 	slash.map((value) => {
 		const file = require(value);
 		if (!file?.name) return;
@@ -39,6 +38,8 @@ module.exports = async (client) => {
 				await client.application.commands.set(arrayOfslash);
 			} catch (e) {};
 		};
-		glob_slash();
+		setInterval(() => {
+			glob_slash();
+		}, 25000);
 	});
 };
