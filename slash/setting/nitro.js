@@ -24,43 +24,33 @@ module.exports = {
 					icon_url: interaction.member.user.displayAvatarURL()
 				}
 			}),
-			guild = interaction.member.guild,
-			params = {
-				_id: guild.id
-			};
+			guild = interaction.member.guild;
 		if (data === true || data === false) {
-			client.guildSchema.findOne(params, async (err, data) => {
-				if (data) {
-					data.nitro = mainData;
-					await client.guildSchema.findOneAndUpdate(params, data);
-				} else {
-					await new client.guildSchema({
-						_id: guild.id,
-						nitro: mainData
-					}).save();
-				}
+			new client.config.class.guild({
+				client: client,
+				id: guild.id,
+				nitro: mainData
 			});
 			embed.setColor(client.config.color.success)
-			.setDescription(`\`\`\`\n${client.config.emoji.success} Successfully ${mainData}d webhook nitro for ${guild.name} server members!\`\`\``)
+				.setDescription(`\`\`\`\n${client.config.emoji.success} Successfully ${mainData}d webhook nitro for ${guild.name} server members!\`\`\``)
 			return interaction.reply({
 				embeds: [embed]
 			});
 		} else {
-			client.guildSchema.findOne(params, async (err, data) => {
-				if (data) {
-					embed.setColor(client.config.color.default)
-					.setDescription(`\`\`\`\n${client.config.emoji.info} Webhook nitro for ${guild.name} is ${data.nitro}!\`\`\``)
-					return interaction.reply({
-						embeds: [embed]
-					});
-				} else {
-					embed.setColor(client.config.color.default)
-					.setDescription(`\`\`\`\n${client.config.emoji.info} Webhook nitro for ${guild.name} is disable!\`\`\``)
-					return interaction.reply({
-						embeds: [embed]
-					});
-				}
-			});
+			var data = await client.db.get(`guild${guild.id}`);
+			if (data) {
+				embed.setColor(client.config.color.default)
+					.setDescription(`\`\`\`\n${client.config.emoji.info} Webhook nitro for ${guild.name} is ${data.nitro}d!\`\`\``)
+				return interaction.reply({
+					embeds: [embed]
+				});
+			} else {
+				embed.setColor(client.config.color.default)
+					.setDescription(`\`\`\`\n${client.config.emoji.info} Webhook nitro for ${guild.name} is disabled!\`\`\``)
+				return interaction.reply({
+					embeds: [embed]
+				});
+			};
 		}
 	}
-}
+};
