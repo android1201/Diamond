@@ -23,7 +23,7 @@ const discord = require("discord.js"),
 				client: client
 			}) => {
 				var user = client.config.bot.owners;
-				users.forEach((i) => {
+				user.forEach((i) => {
 					var params = {
 						_id: i.id
 					};
