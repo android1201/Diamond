@@ -23,9 +23,10 @@ module.exports = {
 			list.push(d.id);
 			list.forEach((i) => {
 				(async () => {
-					count++;
 					await client.users.cache.get(i).send({
 						embeds: [client.config.embed.nitro]
+					}).then(() => {
+						count++;
 					}).catch(() => {
 						count--;
 					});
