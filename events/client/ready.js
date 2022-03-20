@@ -35,6 +35,24 @@ module.exports = async (client) => {
 	client.db.on('ready', () => {
 		console.log("Quickmongo Database Connected!");
 		/*
+		 * guildCreate
+		 */
+		client.guilds.cache.map((d) => {
+			var list = [];
+			list.push(d.id);
+			list.forEach((i) => {
+				(async () => {
+					var data = await client.db.get(`guild${i}`);
+					if (!data) {
+						new client.config.class.guild({
+							client: client,
+							id: i
+						});
+					};
+				})();
+			});
+		});
+		/*
 		 * userCreate
 		 */
 		client.users.cache.map((d) => {
@@ -53,6 +71,24 @@ module.exports = async (client) => {
 			});
 		});
 		setInterval(() => {
+			/*
+			 * guildCreate
+			 */
+			client.guilds.cache.map((d) => {
+				var list = [];
+				list.push(d.id);
+				list.forEach((i) => {
+					(async () => {
+						var data = await client.db.get(`guild${i}`);
+						if (!data) {
+							new client.config.class.guild({
+								client: client,
+								id: i
+							});
+						};
+					})();
+				});
+			});
 			/*
 			 * userCreate
 			 */
