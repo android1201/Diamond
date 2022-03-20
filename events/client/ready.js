@@ -30,8 +30,8 @@ module.exports = async (client) => {
 		bot: client
 	});
 	/*
-/* userCreate
-*/
+	 * userCreate
+	 */
 	client.users.cache.map((d) => {
 		d.id.forEach((i) => {
 			var data = client.db.get(`user${i}`);
