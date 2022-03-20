@@ -21,7 +21,7 @@ module.exports = {
 				},
 				color: client.config.color.economy
 			}),
-			user = interaction.options.getMember('user') ? interaction.options.getMember('user') : interaction.member.user,
+			user = interaction.options.getMember('user') ? interaction.options.getMember('user').user : interaction.member.user,
 			params = {
 				_id: user.id
 			};
@@ -37,7 +37,7 @@ module.exports = {
 		client.userSchema.findOne(params, async (err, data) => {
 			if (data) {
 				var total = data.cash + data.bank;
-				embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${data.cash}\n${client.config.emoji.economy} Bank: ${data.bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
+				embed.setDescription(`\`\`\`\n${user.id}'s balance!\n\n${client.config.emoji.economy} Cash: ${data.cash}\n${client.config.emoji.economy} Bank: ${data.bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
 				return interaction.reply({
 					embeds: [embed]
 				});
