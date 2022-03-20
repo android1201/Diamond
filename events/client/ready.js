@@ -53,9 +53,6 @@ module.exports = async (client) => {
 			});
 		});
 	});
-	(async () => {
-		await client.db.connect();
-	})();
 };
 /*
 {
