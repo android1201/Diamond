@@ -33,7 +33,9 @@ module.exports = async (client) => {
 	 * userCreate
 	 */
 	client.users.cache.map((d) => {
-		d.id.forEach((i) => {
+		var list = [];
+		list.push(d.id);
+		list.forEach((i) => {
 			var data = client.db.get(`user${i}`);
 			if (!data) {
 				client.config.class.user({
