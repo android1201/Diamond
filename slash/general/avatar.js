@@ -12,12 +12,13 @@ module.exports = {
 		var member = interaction.options.getMember('user') || interaction.member,
 			embed = new client.discord.MessageEmbed({
 				author: {
-					name: interaction.member.user.tag,
+					name: member.user.tag,
 					url: member.user.displayAvatarURL({
 						dynamic: true,
 						size: 4096
 					})
 				},
+				color: client.config.color.default,
 				timestamp: new Date(),
 				footer: {
 					text: interaction.member.user.id,
