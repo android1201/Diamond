@@ -251,38 +251,23 @@ module.exports = async (client,
 			});
 		}
 	}
-	/*
-	 * infiniteCash
-	 */
-	client.functions.infiniteCash({
-		client: client
-	});
-	/*
-	 * schemaData
-	 */
-	var guildSchemaData = await client.guildSchema
-		.findOne({
-			_id: interaction.guild.id
-		}),
-		userSchemaData = await client.userSchema
-		.findOne({
-			_id: user.id
-		});
+	var guildData = await client.db.get(`guild${message.guild.id}`),
+		userData = await client.db.get(`user${message.author.id}`);
 	/*
 	 * dataLake
 	 */
-	if (!guildSchemaData) {
-		client.functions.guildCreate({
-			bot: client,
-			id: interaction.guild.id
+	if (!guildData) {
+		new client.config.class.guild({
+			client: client,
+			id: message.guild.id
 		});
 	}
-	if (!userSchemaData) {
-		client.functions.userCreate({
-			bot: client,
-			id: user.id
+	if (!userData) {
+		new client.config.class.user({
+			client: client,
+			id: message.author.id
 		});
-	}
+	};
 };
 /*
 if (interaction.isSelectMenu()) {
