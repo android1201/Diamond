@@ -26,30 +26,12 @@ module.exports = {
 				_id: user.id
 			};
 		if (user.id === client.user.id || client.config.bot.owners.includes(user.id)) {
-			client.userSchema.findOne(params, async (err, data) => {
-				var cash = '∞',
-					bank = '∞',
-					total = '∞';
-				if (data) {
-					data.cash = client.config.economy.infinity;
-					data.bank = client.config.economy.infinity;
-					await client.userSchema.findOneAndUpdate(params, data);
-					embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${cash}\n${client.config.emoji.economy} Bank: ${bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
-					return interaction.reply({
-						embeds: [embed]
-					});
-				}
-				if (!data) {
-					new client.userSchema({
-						_id: user.id,
-						cash: client.config.economy.infinity,
-						bank: client.config.economy.infinity
-					}).save();
-					embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${cash}\n${client.config.emoji.economy} Bank: ${bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
-					return interaction.reply({
-						embeds: [embed]
-					});
-				}
+			var cash = '∞',
+				bank = '∞',
+				total = '∞';
+			embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${cash}\n${client.config.emoji.economy} Bank: ${bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
+			return interaction.reply({
+				embeds: [embed]
 			});
 		} else {
 			client.userSchema.findOne(params, async (err, data) => {
