@@ -26,8 +26,8 @@ module.exports = {
 		if (data) {
 			var cash = data.cash === client.config.economy.infinity ? '∞' : data.cash,
 				bank = data.bank === client.config.economy.infinity ? '∞' : data.bank,
-				total = data.cash === client.config.economy.infinity || data.bank === client.config.economy.infinity ? '∞' : data.cash + data.bank,
-				embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${cash}\n${client.config.emoji.economy} Bank: ${bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
+				total = data.cash === client.config.economy.infinity || data.bank === client.config.economy.infinity ? '∞' : data.cash + data.bank;
+			embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${cash}\n${client.config.emoji.economy} Bank: ${bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
 			return interaction.reply({
 				embeds: [embed]
 			});
