@@ -1,3 +1,4 @@
+/*
 var config = require('../js/configure.js'),
 	mongoose = require('mongoose'),
 	reqString = {
@@ -16,3 +17,4 @@ var config = require('../js/configure.js'),
 		}
 	});
 module.exports = mongoose.model('guild', Schema);
+*/
