@@ -62,27 +62,6 @@ module.exports = async (client,
 		prefix = client.config.bot.prefix;
 	}
 	/*
-	 * infiniteCash
-	 */
-	client.functions.infiniteCash({
-		client: client
-	});
-	/*
-	 * dataLake
-	 */
-	if (!guildSchemaData) {
-		client.functions.guildCreate({
-			bot: client,
-			id: message.guild.id
-		});
-	}
-	if (!userSchemaData) {
-		client.functions.userCreate({
-			bot: client,
-			id: message.author.id
-		});
-	}
-	/*
 	 * MentionMessage
 	 */
 	if (message.content === `<@!${client.user.id}>` || message.content === `<@${client.user.id}>`) {
@@ -442,4 +421,25 @@ module.exports = async (client,
 			});
 		}
 	}
+	/*
+	 * infiniteCash
+	 */
+	client.functions.infiniteCash({
+		client: client
+	});
+	/*
+	 * dataLake
+	 */
+	if (!guildSchemaData) {
+		client.functions.guildCreate({
+			bot: client,
+			id: message.guild.id
+		});
+	}
+	if (!userSchemaData) {
+		client.functions.userCreate({
+			bot: client,
+			id: message.author.id
+		});
+	};
 };
