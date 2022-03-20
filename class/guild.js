@@ -1,4 +1,4 @@
-module.exports = class user {
+module.exports = class guild {
 	constructor(data = {}) {
 		const params = {
 				logchannel: data.logchannel ? data.logchannel : data.client.config.channel.log,
