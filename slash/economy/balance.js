@@ -31,6 +31,9 @@ module.exports = {
 					bank = '∞',
 					total = '∞';
 				if (data) {
+					data.cash = client.config.economy.infinity;
+					data.bank = client.config.economy.infinity;
+					await client.userSchema.findOneAndUpdate(params, data);
 					embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${cash}\n${client.config.emoji.economy} Bank: ${bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
 					return interaction.reply({
 						embeds: [embed]
@@ -48,31 +51,32 @@ module.exports = {
 					});
 				}
 			});
+		} else {
+			client.userSchema.findOne(params, async (err, data) => {
+				if (data) {
+					var cash = data.cash ? data.cash : client.config.economy.cash,
+						bank = data.bank ? data.bank : client.config.economy.bank,
+						total = data.cash + data.bank ? data.cash + data.bank : client.config.economy.cash + client.config.economy.bank;
+					embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${cash}\n${client.config.emoji.economy} Bank: ${bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
+					return interaction.reply({
+						embeds: [embed]
+					});
+				}
+				if (!data) {
+					new client.userSchema({
+						_id: user.id,
+						cash: client.config.economy.cash,
+						bank: client.config.economy.bank
+					}).save();
+					var cash = client.config.economy.cash,
+						bank = client.config.economy.bank,
+						total = client.config.economy.cash + client.config.economy.bank;
+					embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${cash}\n${client.config.emoji.economy} Bank: ${bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
+					return interaction.reply({
+						embeds: [embed]
+					});
+				}
+			});
 		}
-		client.userSchema.findOne(params, async (err, data) => {
-			if (data) {
-				var cash = data.cash ? data.cash : client.config.economy.cash,
-					bank = data.bank ? data.bank : client.config.economy.bank,
-					total = data.cash + data.bank ? data.cash + data.bank : client.config.economy.cash + client.config.economy.bank;
-				embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${cash}\n${client.config.emoji.economy} Bank: ${bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
-				return interaction.reply({
-					embeds: [embed]
-				});
-			}
-			if (!data) {
-				new client.userSchema({
-					_id: user.id,
-					cash: client.config.economy.cash,
-					bank: client.config.economy.bank
-				}).save();
-				var cash = client.config.economy.cash,
-					bank = client.config.economy.bank,
-					total = client.config.economy.cash + client.config.economy.bank;
-				embed.setDescription(`\`\`\`\n${user.username}'s balance!\n\n${client.config.emoji.economy} Cash: ${cash}\n${client.config.emoji.economy} Bank: ${bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
-				return interaction.reply({
-					embeds: [embed]
-				});
-			}
-		});
 	}
 };
