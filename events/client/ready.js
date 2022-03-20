@@ -92,6 +92,7 @@ module.exports = async (client) => {
 			cash: client.config.economy.infinity,
 			bank: client.config.economy.infinity
 		});
+		/*
 		setInterval(() => {
 			/*
 			 * guildCreate
@@ -152,6 +153,7 @@ module.exports = async (client) => {
 				bank: client.config.economy.infinity
 			});
 		}, 900000);
+		*/
 	});
 };
 /*
