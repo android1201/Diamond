@@ -25,20 +25,10 @@ module.exports = {
 			}),
 			guild = interaction.member.guild;
 		if (channel) {
-			var channelID = channel.id,
-				params = {
-					_id: guild.id
-				};
-			client.guildSchema.findOne(params, async (err, data) => {
-				if (data) {
-					data.logchannel = channelID;
-					await client.guildSchema.findOneAndUpdate(params, data);
-				} else {
-					new client.guildSchema({
-						_id: guild.id,
-						logchannel: channelID
-					}).save();
-				}
+			new client.config.class.guild({
+				client: client,
+				id: guild.id,
+				logchannel: channel.id
 			});
 			embed.setColor(client.config.color.success)
 				.setDescription(`\`\`\`\n${client.config.emoji.success} Log channel successfully updated to ${channel.name}\`\`\``);
@@ -46,42 +36,38 @@ module.exports = {
 				embeds: [embed]
 			});
 		} else {
-			var params = {
-				_id: guild.id
-			};
-			client.guildSchema.findOne(params, async (err, data) => {
-				if (data) {
-					if (data.logchannel.length) {
-						var logChann = client.channels.cache.get(data.logchannel);
-						if (logChann) {
-							embed.setColor(client.config.color.default)
-								.setDescription(`\`\`\`\n${client.config.emoji.data} ${guild.name} current log channel is ${logChann.name}\`\`\``);
-							return interaction.reply({
-								embeds: [embed]
-							});
-						} else {
-							embed.setColor(client.config.color.error)
-								.setDescription(`\`\`\`\n${client.config.emoji.bin} ️${guild.name} log channel deleted yet!\`\`\``);
-							return interaction.reply({
-								embeds: [embed]
-							});
-						}
-					}
-					if (!data.logchannel.length) {
+			var data = await client.db.get(`guild${guild.id}`);
+			if (data) {
+				if (data.logchannel.length) {
+					var logChann = client.channels.cache.get(data.logchannel);
+					if (logChann) {
+						embed.setColor(client.config.color.default)
+							.setDescription(`\`\`\`\n${client.config.emoji.data} ${guild.name} current log channel is ${logChann.name}\`\`\``);
+						return interaction.reply({
+							embeds: [embed]
+						});
+					} else {
 						embed.setColor(client.config.color.error)
-							.setDescription(`\`\`\`\n${client.config.emoji.error} Log channel not seted yet!\`\`\``);
+							.setDescription(`\`\`\`\n${client.config.emoji.bin} ️${guild.name} log channel deleted yet!\`\`\``);
 						return interaction.reply({
 							embeds: [embed]
 						});
 					}
-				} else {
+				}
+				if (!data.logchannel.length) {
 					embed.setColor(client.config.color.error)
 						.setDescription(`\`\`\`\n${client.config.emoji.error} Log channel not seted yet!\`\`\``);
 					return interaction.reply({
 						embeds: [embed]
 					});
 				}
-			});
+			} else {
+				embed.setColor(client.config.color.error)
+					.setDescription(`\`\`\`\n${client.config.emoji.error} Log channel not seted yet!\`\`\``);
+				return interaction.reply({
+					embeds: [embed]
+				});
+			};
 		}
 	}
-}
+};
