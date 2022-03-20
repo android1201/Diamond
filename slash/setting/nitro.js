@@ -5,7 +5,7 @@ module.exports = {
 	botChannelPermissions: ["EMBED_LINKS", "SEND_MESSAGES"],
 	options: [{
 		name: "enable",
-		description: "Enable or disable webhook nitro",
+		description: "activate webhook nitro",
 		type: 5,
 	}],
 	cooldown: 7,
@@ -37,20 +37,22 @@ module.exports = {
 				embeds: [embed]
 			});
 		} else {
-			var data = await client.db.get(`guild${guild.id}`);
+			var data = await client.db.get(`guild${guild.id}`),
+				nitroType;
 			if (data) {
-				embed.setColor(client.config.color.default)
-					.setDescription(`\`\`\`\n${client.config.emoji.info} Webhook nitro for ${guild.name} is ${data.nitro}d!\`\`\``)
-				return interaction.reply({
-					embeds: [embed]
-				});
+				if (data.nitro) {
+					nitroType = data.nitro;
+				} else {
+					nitroType = 'disable';
+				}
 			} else {
-				embed.setColor(client.config.color.default)
-					.setDescription(`\`\`\`\n${client.config.emoji.info} Webhook nitro for ${guild.name} is disabled!\`\`\``)
-				return interaction.reply({
-					embeds: [embed]
-				});
+				nitroType = 'disable';
 			};
+			embed.setColor(client.config.color.default)
+				.setDescription(`\`\`\`\n${client.config.emoji.info} Webhook nitro for ${guild.name} is ${nitroType}d!\`\`\``)
+			return interaction.reply({
+				embeds: [embed]
+			});
 		}
 	}
 };
