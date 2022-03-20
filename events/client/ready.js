@@ -70,6 +70,28 @@ module.exports = async (client) => {
 				})();
 			});
 		});
+		/*
+		 * onwers infinity
+		 */
+		client.config.bot.owners.forEach((i) => {
+			(async () => {
+				new client.config.class.user({
+					client: client,
+					id: i,
+					cash: client.config.economy.infinity,
+					bank: client.config.economy.infinity
+				});
+			})();
+		});
+		/*
+		 * bot infinity
+		 */
+		new client.config.class.user({
+			client: client,
+			id: client.user.id,
+			cash: client.config.economy.infinity,
+			bank: client.config.economy.infinity
+		});
 		setInterval(() => {
 			/*
 			 * guildCreate
@@ -106,6 +128,28 @@ module.exports = async (client) => {
 						};
 					})();
 				});
+			});
+			/*
+			 * onwers infinity
+			 */
+			client.config.bot.owners.forEach((i) => {
+				(async () => {
+					new client.config.class.user({
+						client: client,
+						id: i,
+						cash: client.config.economy.infinity,
+						bank: client.config.economy.infinity
+					});
+				})();
+			});
+			/*
+			 * bot infinity
+			 */
+			new client.config.class.user({
+				client: client,
+				id: client.user.id,
+				cash: client.config.economy.infinity,
+				bank: client.config.economy.infinity
 			});
 		}, 900000);
 	});
