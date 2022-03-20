@@ -1,12 +1,9 @@
 module.exports = async (client,
 	guild) => {
-	var guildSchemaData = await client.guildSchema
-		.findOne({
-			_id: guild.id
-		})
-	if (!guildSchemaData) {
-		client.functions.guildCreate({
-			bot: client,
+	var guild = await client.db.get(`guild${guild.id}`);
+	if (!guild) {
+		new client.config.class.guild({
+			client: client,
 			id: guild.id
 		});
 	}
