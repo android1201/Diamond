@@ -21,6 +21,7 @@ module.exports = {
 			author: {
 				name: interaction.member.user.tag
 			},
+			color: client.config.color.default,
 			timestamp: new Date(),
 			footer: {
 				text: interaction.member.user.id,
