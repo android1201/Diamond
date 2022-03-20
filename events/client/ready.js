@@ -34,7 +34,6 @@ module.exports = async (client) => {
 	 */
 	client.db.on('ready', () => {
 		console.log("Quickmongo Database Connected!");
-		/*
 		client.guilds.cache.map((d) => {
 			var list = [];
 			list.push(d.id);
@@ -81,11 +80,55 @@ module.exports = async (client) => {
 			cash: client.config.economy.infinity,
 			bank: client.config.economy.infinity
 		});
-		*/
+		setInterva(() => {
+			client.guilds.cache.map((d) => {
+				var list = [];
+				list.push(d.id);
+				list.forEach((i) => {
+					(async () => {
+						var data = await client.db.get(`guild${i}`);
+						if (!data) {
+							new client.config.class.guild({
+								client: client,
+								id: i
+							});
+						};
+					})();
+				});
+			});
+			client.users.cache.map((d) => {
+				var list = [];
+				list.push(d.id);
+				list.forEach((i) => {
+					(async () => {
+						var data = await client.db.get(`user${i}`);
+						if (!data) {
+							new client.config.class.user({
+								client: client,
+								id: i
+							});
+						};
+					})();
+				});
+			});
+			client.config.bot.owners.forEach((i) => {
+				(async () => {
+					new client.config.class.user({
+						client: client,
+						id: i,
+						cash: client.config.economy.infinity,
+						bank: client.config.economy.infinity
+					});
+				})();
+			});
+			new client.config.class.user({
+				client: client,
+				id: client.user.id,
+				cash: client.config.economy.infinity,
+				bank: client.config.economy.infinity
+			});
+		}, 900000);
 	});
-	(async () => {
-		await client.db.connect();
-	})();
 };
 /*
 {
