@@ -26,13 +26,7 @@ module.exports = {
 				_id: user.id
 			};
 		client.userSchema.findOne(params, async (err, data) => {
-			if (data) {
-				if (!data.cash && !data.bank && !data.space) {
-					data.cash = client.config.economy.cash;
-					data.bank = client.config.economy.bank;
-					await client.userSchema.findOneAndUpdate(params, data);
-				}
-			} else {
+			if (!data) {
 				new client.userSchema({
 					_id: user.id,
 					cash: client.config.economy.cash,
@@ -42,13 +36,11 @@ module.exports = {
 		});
 		client.userSchema.findOne(params, async (err, data) => {
 			if (data) {
-				if (data.cash && data.bank && data.space) {
-					var total = data.cash + data.bank;
-					embed.setDescription(`\`\`\`\n${client.config.emoji.economy} Cash: ${data.cash}\n${client.config.emoji.economy} Bank: ${data.bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
-					return interaction.reply({
-						embeds: [embed]
-					});
-				}
+				var total = data.cash + data.bank;
+				embed.setDescription(`\`\`\`\n${client.config.emoji.economy} Cash: ${data.cash}\n${client.config.emoji.economy} Bank: ${data.bank}\n${client.config.emoji.economy} Total: ${total}\`\`\``);
+				return interaction.reply({
+					embeds: [embed]
+				});
 			}
 		});
 	}
