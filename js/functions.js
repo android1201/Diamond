@@ -19,7 +19,7 @@ const discord = require("discord.js"),
 		/*
 		 * infiniteCash
 		 */
-		infiniteCash => async ({
+		infiniteCash = async ({
 				client: client
 			}) => {
 				var user = client.config.bot.owners;
