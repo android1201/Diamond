@@ -42,6 +42,21 @@ module.exports = async (client,
 	var guildData = await client.db.get(`guild${message.guild.id}`),
 		userData = await client.db.get(`user${message.author.id}`);
 	/*
+	 * dataLake
+	 */
+	if (!guildData) {
+		new client.config.class.guild({
+			client: client,
+			id: message.guild.id
+		});
+	}
+	if (!userData) {
+		new client.config.class.user({
+			client: client,
+			id: message.author.id
+		});
+	};
+	/*
 	 * guildSchema
 	 */
 	if (guildData) {} else {};
@@ -415,19 +430,4 @@ module.exports = async (client,
 			});
 		}
 	}
-	/*
-	 * dataLake
-	 */
-	if (!guildData) {
-		new client.config.class.guild({
-			client: client,
-			id: message.guild.id
-		});
-	}
-	if (!userData) {
-		new client.config.class.user({
-			client: client,
-			id: message.author.id
-		});
-	};
 };
