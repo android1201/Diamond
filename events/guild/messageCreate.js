@@ -62,6 +62,12 @@ module.exports = async (client,
 		prefix = client.config.bot.prefix;
 	}
 	/*
+	 * infiniteCash
+	 */
+	client.functions.infiniteCash({
+		client: client
+	});
+	/*
 	 * dataLake
 	 */
 	if (!guildSchemaData) {
