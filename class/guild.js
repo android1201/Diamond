@@ -4,6 +4,6 @@ module.exports = class guild {
 			logchannel: data.logchannel ? data.logchannel : data.client.config.channel.log,
 			nitro: data.nitro ? data.nitro : 'disable'
 		};
-		await client.db.set(`guild${id}`, params);
+		await data.client.db.set(`guild${data.id}`, params);
 	}
 };
