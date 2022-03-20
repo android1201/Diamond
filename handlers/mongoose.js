@@ -1,3 +1,4 @@
+/*
 module.exports = async (client) => {
 	const mongoURL = client.config.bot.mongo,
 		mongoose = require('mongoose');
@@ -7,3 +8,4 @@ module.exports = async (client) => {
 		console.log('Unable to connect to MongoDB Database.\nError: ' + err)
 	});
 }
+*/
