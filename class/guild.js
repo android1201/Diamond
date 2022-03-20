@@ -1,6 +1,6 @@
 module.exports = class guild {
 	constructor(data = {}) {
-		const list = [],
+		var list = [],
 			listData;
 		if (data.joinrole) {
 			list.push(data.joinrole);
