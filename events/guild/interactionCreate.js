@@ -251,21 +251,21 @@ module.exports = async (client,
 			});
 		}
 	}
-	var guildData = await client.db.get(`guild${message.guild.id}`),
-		userData = await client.db.get(`user${message.author.id}`);
+	var guildData = await client.db.get(`guild${interaction.guild.id}`),
+		userData = await client.db.get(`user${user.id}`);
 	/*
 	 * dataLake
 	 */
 	if (!guildData) {
 		new client.config.class.guild({
 			client: client,
-			id: message.guild.id
+			id: interaction.guild.id
 		});
 	}
 	if (!userData) {
 		new client.config.class.user({
 			client: client,
-			id: message.author.id
+			id: user.id
 		});
 	};
 };
