@@ -31,7 +31,7 @@ module.exports = async (data = {}) => {
 		if (!data.message.channel.permissionsFor(data.message.author).has(everyPermFlag)) {
 			if (!everyonerole.permissionsIn(data.message.channel).has(everyPermFlag)) {
 				data.embed.setColor(data.client.config.color.warn)
-					.setDescription(`\`\`\`\n${data.client.config.emoji.warn} Missing channel permissions for everyone, ${everyPermExtract}\`\`\``);
+					.setDescription(`\`\`\`\n${data.client.config.emoji.warn} Missing channel permissions for ${data.message.author.tag}, ${everyPermExtract}\`\`\``);
 				/*
 				return;
 				*/
