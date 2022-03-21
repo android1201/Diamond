@@ -254,7 +254,7 @@ module.exports = async (client,
 	if (interaction.isSelectMenu()) {
 		const commandsCustomIDs = [],
 			fs = require('fs');
-		fs.readdirSync("./../slash/").map(async (dir) => {
+		fs.readdirSync("../../slash/").map(async (dir) => {
 			commandsCustomIDs.push(dir);
 		});
 		if (commandsCustomIDs.includes(interaction.customId)) {
