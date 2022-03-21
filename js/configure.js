@@ -8,7 +8,6 @@ module.exports = {
 		id: "955013557710372865",
 		mongo: process.env.mongo ? process.env.mongo : "",
 		owners: ["952998986824953866"],
-		prefix: "d?",
 		server: "953691188425285682",
 		status: "STREAMING",
 		status_message: "%servers% servers and watching over %users% members with %emojis% emojis",
