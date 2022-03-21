@@ -12,14 +12,10 @@ module.exports = class user {
 				if (data.bank) {
 					params['bank'] = data.bank ? data.bank : d.bank;
 				}
-				if (data.prefix) {
-					params['prefix'] = data.prefix ? data.prefix : d.prefix;
-				}
 			} else {
 				params = {
 					cash: data.cash ? data.cash : data.client.config.economy.cash,
-					bank: data.bank ? data.bank : data.client.config.economy.bank,
-					prefix: data.prefix ? data.prefix : data.client.config.bot.prefix
+					bank: data.bank ? data.bank : data.client.config.economy.bank
 				};
 			};
 			(async () => {
