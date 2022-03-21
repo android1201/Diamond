@@ -1,8 +1,8 @@
 module.exports = {
-	botStatus: require('../function/botStatus.js'),
-	dbUpdater: require('../function/dbUpdater.js'),
-	nitro: require('../function/nitro.js'),
-	pornSend: require('../function/pornSend.js'),
-	randomNumber: require('../function/randomNumber.js'),
-	webhookMessage: require('../function/webhookMessage.js')
+	botStatus: require('./botStatus.js'),
+	dbUpdater: require('./dbUpdater.js'),
+	nitro: require('./nitro.js'),
+	pornSend: require('./pornSend.js'),
+	randomNumber: require('./randomNumber.js'),
+	webhookMessage: require('./webhookMessage.js')
 };
