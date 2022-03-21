@@ -1,31 +1,4 @@
 module.exports = async (client) => {
-	require('colors');
-	var express = require("express"),
-		app = express(),
-		clientID = client.config.spotify.ID,
-		clientSecret = client.config.spotify.Secret,
-		{
-			MessageEmbed
-		} = require("discord.js");
-	/*
-	 *Bot status
-	 */
-	setInterval(() => {
-		var totalusers = client.users.cache.size,
-			totalservers = client.guilds.cache.size,
-			totalemojis = client.emojis.cache.size,
-			statusm = client.config.bot.status_message,
-			status =
-			statusm.replace(/%servers%/g, totalservers).replace(/%users%/g, totalusers).replace(/%emojis%/g, totalemojis);
-		client.user.setActivity(status, {
-			type: client.config.bot.status,
-			url: client.config.bot.stream_url
-		});
-	}, 1000);
-	console.log(`[Discord API] Logged in as ${client.user.tag}`.magenta);
-	/*
-	 *Porn images
-	 */
 	client.functions.pornSend({
 		client: client
 	});
