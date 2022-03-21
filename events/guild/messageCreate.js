@@ -23,7 +23,16 @@ module.exports = async (client,
 			if (guildData.nitro === "enable") {
 				return client.config.function.nitro({
 					client: client,
-					embed: embed,
+					embed: {
+						timestamp: new Date(),
+						author: {
+							name: message.author.tag
+						},
+						footer: {
+							text: message.author.id,
+							icon_url: message.author.displayAvatarURL()
+						}
+					},
 					message: message
 				});
 			} else {
