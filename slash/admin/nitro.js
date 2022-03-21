@@ -9,7 +9,7 @@ module.exports = {
 		type: 5,
 	}],
 	cooldown: 7,
-	category: "settings",
+	category: "admin",
 	run: async (interaction, client) => {
 		var data = interaction.options.getBoolean('enable'),
 			dataType = (r) => r ? 'enable' : 'disable',
