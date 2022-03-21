@@ -84,28 +84,55 @@ module.exports = {
 			const row = new MessageActionRow().addComponents(
 				new MessageSelectMenu()
 				.setCustomId('help_menu')
-				.setPlaceholder('Select Command Category.')
+				.setPlaceholder('Select Command Category!')
 				.setMinValues(1)
 				.setMaxValues(1)
 				.addOptions([{
-						label: 'Fun',
-						description: 'Show all commands in fun category.',
-						emoji: '😂',
-						value: 'fun',
-					},
-					{
-						label: 'General',
-						description: 'Show all commands in general category.',
-						emoji: '🔎',
-						value: 'general',
-					},
-					{
-						label: 'Mod',
-						description: 'Show all commands in mod category.',
-						emoji: '🔨',
-						value: 'mod',
-					},
-				]),
+					label: 'Admin',
+					description: 'Show all commands in Admin category.',
+					emoji: '⚙️',
+					value: 'admin',
+				}, {
+					label: 'Developer',
+					description: 'Show all commands in Developer category.',
+					emoji: '🧑‍💻',
+					value: 'developer',
+				}, {
+					label: 'Economy',
+					description: 'Show all commands in Economy category.',
+					emoji: '💵',
+					value: 'economy',
+				}, {
+					label: 'Fun',
+					description: 'Show all commands in fun category.',
+					emoji: '🎠',
+					value: 'fun',
+				}, {
+					label: 'General',
+					description: 'Show all commands in General category.',
+					emoji: '🍹',
+					value: 'general',
+				}, {
+					label: 'Misc',
+					description: 'Show all commands in Misc category.',
+					emoji: '🏳️‍⚧️',
+					value: 'misc',
+				}, {
+					label: 'Mod',
+					description: 'Show all commands in Mod category.',
+					emoji: '🔨',
+					value: 'mod',
+				}, {
+					label: 'Music',
+					description: 'Show all commands in Music category.',
+					emoji: '🎶',
+					value: 'music',
+				}, {
+					label: 'NSFW',
+					description: 'Show all commands in NSFW category.',
+					emoji: '🔞',
+					value: 'nsfw',
+				}]),
 			);
 			embed.setColor(client.config.color.default)
 				.setDescription(`\`\`\`${client.config.emoji.data} Select category you need help for!\`\`\``);
@@ -120,6 +147,7 @@ module.exports = {
 				componentType: 'SELECT_MENU',
 			});
 			collector.on('collect', async (i) => {
+				/*
 				if (i.values.includes('fun')) {
 					await i.deferUpdate();
 					const loopArray = [];
@@ -205,6 +233,7 @@ module.exports = {
 					});
 				}
 			});
+			*/
 		} catch (e) {
 			console.error(e);
 			return false;
