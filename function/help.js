@@ -8,7 +8,7 @@ module.exports = async (data = {}) => {
 		});
 		if (commandsCustomIDs.includes(data.interaction.customId)) {
 			const selectedValues = data.interaction.values;
-			const data.command = data.client.slash.find(r => r.name === selectedValues[0]);
+			const command = data.client.slash.find(r => r.name === selectedValues[0]);
 			if (selectedValues.includes(data.command.name)) {
 				var nme = data.command.name ? data.command.name[0].toUpperCase() + data.command.name.toLowerCase().slice(1) : 'Name not given',
 					dsn = data.command.description ? data.command.description : 'Description not given',
@@ -45,8 +45,7 @@ module.exports = async (data = {}) => {
 					}
 				}
 				data.embed.setColor(data.client.config.color.default)
-					.setDescription(`\`\`\`\nName: ${nme}\nDescription: ${dsn}\nUsage: ${usg}\nCooldown: ${cld}\nCategory: ${ctg}\nPermission:\n	BCP: ${bcp}\n	BRP: ${brp}\n	UCP: ${ucp}\n	URP: ${urp}\n	Admin: ${admin}\n	Mod: ${mod}\n	Owner: ${onr}\n	Developer: ${dvp}\nType:\n	Vc: ${vic}`\
-						`\`\``);
+					.setDescription(`\`\`\`\nName: ${nme}\nDescription: ${dsn}\nUsage: ${usg}\nCooldown: ${cld}\nCategory: ${ctg}\nPermission:\n	BCP: ${bcp}\n	BRP: ${brp}\n	UCP: ${ucp}\n	URP: ${urp}\n	Admin: ${admin}\n	Mod: ${mod}\n	Owner: ${onr}\n	Developer: ${dvp}\nType:\n	Vc: ${vic}\`\`\``);
 				data.interaction.reply({
 					embeds: [data.embed],
 					ephemeral: true
