@@ -6,7 +6,6 @@ module.exports = {
 		description: 'Command you need help for',
 		type: 3,
 	}, ],
-	usage: '/ping',
 	category: 'general',
 	run: async (interaction, client) => {
 		const {
@@ -29,32 +28,58 @@ module.exports = {
 		try {
 			const command = interaction.options.getString('command');
 			if (command) {
-				const cmd = client.commands.get(command.toLowerCase());
+				const cmd = client.slash.get(command.toLowerCase());
 				if (!cmd) {
+					embed.setColor(client.config.color.error)
+						.setDescription(`\`\`\`${client.config.emoji.error} I can't find ${command} command!\`\`\``)
 					return interaction.reply({
-						content: `I can\'t find \`${command}\` command`,
+						content: `I can't find ${command} command!`,
 						ephemeral: true
 					});
-				}
-				const embed = new MessageEmbed().setColor(interaction.guild.me.displayHexColor);
-				if (cmd.name) {
-					embed.setTitle(`Command: ${cmd.name}`);
-				}
-				if (cmd.description) {
-					embed.setDescription(cmd.description);
-				}
-				if (cmd.usage) {
-					embed.addField('Usage:', cmd.usage);
-				}
-				if (cmd.timeout) {
-					embed.addField('Timeout:', humanizeDuration(cmd.timeout, {
-						round: true
-					}));
-				}
-				return interaction.reply({
-					embeds: [embed]
-				});
-			}
+				};
+				if (cmd) {
+					var nme = cmd.name ? cmd.name[0].toUpperCase() + cmd.name.toLowerCase().slice(1) : 'Name not given',
+						dsn = cmd.description ? cmd.description : 'Description not given',
+						usg = cmd.usage ? cmd.usage : 'Usage not given',
+						cld = cmd.cooldown ? cmd.cooldown : 'Usage not given',
+						ctg = cmd.category ? cmd.category : 'Category not given',
+						vic = cmd.vc ? 'Yes' : 'No',
+						mod = cmd.mod ? 'Yes' : 'No',
+						admin = cmd.admin ? 'Yes' : 'No',
+						dvp = cmd.developer ? 'Yes' : 'No',
+						onr = cmd.guildOwner ? 'Yes' : 'No',
+						bcp = 'Not given',
+						brp = 'Not given',
+						ucp = 'Not given',
+						urp = 'Not given';
+					if (cmd.botChannelPermissions) {
+						if (cmd.botChannelPermissions.length) {
+							bcp = cmd.botChannelPermissions.map(value => `${value[0].toUpperCase() + value.toLowerCase().slice(1).replace(/_/g, ' ')}`).join(`, `);
+						}
+					}
+					if (cmd.botRolePermissions) {
+						if (cmd.botRolePermissions.length) {
+							brp = cmd.botRolePermissions.map(value => `${value[0].toUpperCase() + value.toLowerCase().slice(1).replace(/_/g, ' ')}`).join(`, `);
+						}
+					}
+					if (cmd.userChannelPermissions) {
+						if (cmd.userChannelPermissions.length) {
+							ucp = cmd.userChannelPermissions.map(value => `${value[0].toUpperCase() + value.toLowerCase().slice(1).replace(/_/g, ' ')}`).join(`, `);
+						}
+					}
+					if (cmd.userRolePermissions) {
+						if (cmd.userRolePermissions.length) {
+							urp = cmd.userRolePermissions.map(value => `${value[0].toUpperCase() + value.toLowerCase().slice(1).replace(/_/g, ' ')}`).join(`, `);
+						}
+					}
+					embed.setColor(data.client.config.color.default)
+						.setDescription(`\`\`\`\nName: ${nme}\nDescription: ${dsn}\nUsage: ${usg}\nCooldown: ${cld}\nCategory: ${ctg}\nPermissions:\n	BCP: ${bcp}\n	BRP: ${brp}\n	UCP: ${ucp}\n	URP: ${urp}\n	Admin: ${admin}\n	Mod: ${mod}\n	Owner: ${onr}\n	Developer: ${dvp}\nTypes:\n	Vc: ${vic}\`\`\``);
+					interaction.reply({
+						embeds: [embed],
+						ephemeral: true
+					});
+				};
+			};
 			const row = new MessageActionRow().addComponents(
 				new MessageSelectMenu()
 				.setCustomId('help_menu')
