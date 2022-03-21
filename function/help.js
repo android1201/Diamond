@@ -45,7 +45,7 @@ module.exports = async (data = {}) => {
 					}
 				}
 				data.embed.setColor(data.client.config.color.default)
-					.setDescription(`\`\`\`\nName: ${nme}\nDescription: ${dsn}\nUsage: ${usg}\nCooldown: ${cld}\nCategory: ${ctg}\nPermission:\n	BCP: ${bcp}\n	BRP: ${brp}\n	UCP: ${ucp}\n	URP: ${urp}\n	Admin: ${admin}\n	Mod: ${mod}\n	Owner: ${onr}\n	Developer: ${dvp}\nType:\n	Vc: ${vic}\`\`\``);
+					.setDescription(`\`\`\`\nName: ${nme}\nDescription: ${dsn}\nUsage: ${usg}\nCooldown: ${cld}\nCategory: ${ctg}\nPermissions:\n	BCP: ${bcp}\n	BRP: ${brp}\n	UCP: ${ucp}\n	URP: ${urp}\n	Admin: ${admin}\n	Mod: ${mod}\n	Owner: ${onr}\n	Developer: ${dvp}\nTypes:\n	Vc: ${vic}\`\`\``);
 				data.interaction.reply({
 					embeds: [data.embed],
 					ephemeral: true
