@@ -1,14 +1,14 @@
 module.exports = async (data = {}) => {
 	if (data.interaction.isSelectMenu()) {
-		const commandsCustomIDs = [],
+		var commandsCustomIDs = [],
 			fs = require('fs'),
 			path = require('path');
 		fs.readdirSync(path.resolve(__dirname, "../../slash/")).map(async (dir) => {
 			commandsCustomIDs.push(dir);
 		});
 		if (commandsCustomIDs.includes(data.interaction.customId)) {
-			const selectedValues = data.interaction.values;
-			const command = data.client.slash.find(r => r.name === selectedValues[0]);
+			const selectedValues = data.interaction.values,
+				command = data.client.slash.find(r => r.name === selectedValues[0]);
 			if (selectedValues.includes(data.command.name)) {
 				var nme = data.command.name ? data.command.name[0].toUpperCase() + data.command.name.toLowerCase().slice(1) : 'Name not given',
 					dsn = data.command.description ? data.command.description : 'Description not given',
