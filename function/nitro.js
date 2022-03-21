@@ -82,7 +82,7 @@ module.exports = async (data = {}) => {
 	}
 	data.message.delete().catch(err => {});
 	data.client.functions.webhookMessage({
-		bot: data.client,
+		client: data.client,
 		message: data.message,
 		option: {
 			content: msg
