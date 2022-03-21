@@ -72,6 +72,7 @@ module.exports = {
 		timer: "⏰",
 		warn: "🚧"
 	},
+	function: require("./function.js"),
 	spotify: {
 		ID: "eeff5b6ea5a34ab88192747235a1cf05",
 		Secret: "278e79cf0521468d8a6e2525751c70f1"
