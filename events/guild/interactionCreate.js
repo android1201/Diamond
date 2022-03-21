@@ -250,23 +250,6 @@ module.exports = async (client,
 				}, 5000);
 			});
 		}
-	}
-	var guildData = await client.db.get(`guild${interaction.guild.id}`),
-		userData = await client.db.get(`user${user.id}`);
-	/*
-	 * dataLake
-	 */
-	if (!guildData) {
-		new client.config.class.guild({
-			client: client,
-			id: interaction.guild.id
-		});
-	}
-	if (!userData) {
-		new client.config.class.user({
-			client: client,
-			id: user.id
-		});
 	};
 	if (interaction.isSelectMenu()) {
 		const commandsCustomIDs = [],
@@ -306,5 +289,22 @@ module.exports = async (client,
 				});
 			}
 		}
+	};
+	var guildData = await client.db.get(`guild${interaction.guild.id}`),
+		userData = await client.db.get(`user${user.id}`);
+	/*
+	 * dataLake
+	 */
+	if (!guildData) {
+		new client.config.class.guild({
+			client: client,
+			id: interaction.guild.id
+		});
+	}
+	if (!userData) {
+		new client.config.class.user({
+			client: client,
+			id: user.id
+		});
 	};
 };
