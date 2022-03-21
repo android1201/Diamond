@@ -1,6 +1,7 @@
 module.exports = {
 	name: 'help',
 	description: 'Get list of all slash commands',
+	botChannelPermissions: ["EMBED_LINKS", "SEND_MESSAGES"],
 	options: [{
 		name: 'command',
 		description: 'Command you need help for',
