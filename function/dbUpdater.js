@@ -1,98 +1,98 @@
-module.exports = async (data = {}) => {
-	data.client.db.on('ready', () => {
+module.exports = async (mainData = {}) => {
+	mainData.client.db.on('ready', () => {
 		console.log("Quickmongo Database Connected!");
-		data.client.guilds.cache.map((d) => {
+		mainData.client.guilds.cache.map((d) => {
 			var list = [];
 			list.push(d.id);
 			list.forEach((i) => {
 				(async () => {
-					var data = await data.client.db.get(`guild${i}`);
+					var data = await mainData.client.db.get(`guild${i}`);
 					if (!data) {
-						new data.client.config.class.guild({
-							client: data.client,
+						new mainData.client.config.class.guild({
+							client: mainData.client,
 							id: i
 						});
 					};
 				})();
 			});
 		});
-		data.client.users.cache.map((d) => {
+		mainData.client.users.cache.map((d) => {
 			var list = [];
 			list.push(d.id);
 			list.forEach((i) => {
 				(async () => {
-					var data = await data.client.db.get(`user${i}`);
+					var data = await mainData.client.db.get(`user${i}`);
 					if (!data) {
-						new data.client.config.class.user({
-							client: data.client,
+						new mainData.client.config.class.user({
+							client: mainData.client,
 							id: i
 						});
 					};
 				})();
 			});
 		});
-		data.client.config.bot.owners.forEach((i) => {
+		mainData.client.config.bot.owners.forEach((i) => {
 			(async () => {
-				new data.client.config.class.user({
-					client: data.client,
+				new mainData.client.config.class.user({
+					client: mainData.client,
 					id: i,
-					cash: data.client.config.economy.infinity,
-					bank: data.client.config.economy.infinity
+					cash: mainData.client.config.economy.infinity,
+					bank: mainData.client.config.economy.infinity
 				});
 			})();
 		});
-		new data.client.config.class.user({
-			client: data.client,
-			id: data.client.user.id,
-			cash: data.client.config.economy.infinity,
-			bank: data.client.config.economy.infinity
+		new mainData.client.config.class.user({
+			client: mainData.client,
+			id: mainData.client.user.id,
+			cash: mainData.client.config.economy.infinity,
+			bank: mainData.client.config.economy.infinity
 		});
 		setInterval(() => {
-			data.client.guilds.cache.map((d) => {
+			mainData.client.guilds.cache.map((d) => {
 				var list = [];
 				list.push(d.id);
 				list.forEach((i) => {
 					(async () => {
-						var data = await data.client.db.get(`guild${i}`);
+						var data = await mainData.client.db.get(`guild${i}`);
 						if (!data) {
-							new data.client.config.class.guild({
-								client: data.client,
+							new mainData.client.config.class.guild({
+								client: mainData.client,
 								id: i
 							});
 						};
 					})();
 				});
 			});
-			data.client.users.cache.map((d) => {
+			mainData.client.users.cache.map((d) => {
 				var list = [];
 				list.push(d.id);
 				list.forEach((i) => {
 					(async () => {
-						var data = await data.client.db.get(`user${i}`);
+						var data = await mainData.client.db.get(`user${i}`);
 						if (!data) {
-							new data.client.config.class.user({
-								client: data.client,
+							new mainData.client.config.class.user({
+								client: mainData.client,
 								id: i
 							});
 						};
 					})();
 				});
 			});
-			data.client.config.bot.owners.forEach((i) => {
+			mainData.client.config.bot.owners.forEach((i) => {
 				(async () => {
-					new data.client.config.class.user({
-						client: data.client,
+					new mainData.client.config.class.user({
+						client: mainData.client,
 						id: i,
-						cash: data.client.config.economy.infinity,
-						bank: data.client.config.economy.infinity
+						cash: mainData.client.config.economy.infinity,
+						bank: mainData.client.config.economy.infinity
 					});
 				})();
 			});
-			new data.client.config.class.user({
-				client: data.client,
-				id: data.client.user.id,
-				cash: data.client.config.economy.infinity,
-				bank: data.client.config.economy.infinity
+			new mainData.client.config.class.user({
+				client: mainData.client,
+				id: mainData.client.user.id,
+				cash: mainData.client.config.economy.infinity,
+				bank: mainData.client.config.economy.infinity
 			});
 		}, 90000);
 	});
