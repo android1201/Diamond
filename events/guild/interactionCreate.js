@@ -251,46 +251,12 @@ module.exports = async (client,
 			});
 		}
 	};
-	if (interaction.isSelectMenu()) {
-		const commandsCustomIDs = [],
-			fs = require('fs'),
-			path = require('path');
-		fs.readdirSync(path.resolve(__dirname, "../../slash/")).map(async (dir) => {
-			commandsCustomIDs.push(dir);
-		});
-		if (commandsCustomIDs.includes(interaction.customId)) {
-			const selectedValues = interaction.values;
-			const command = client.slash.find(r => r.name === selectedValues[0]);
-			if (selectedValues.includes(command.name)) {
-				const embed = new MessageEmbed()
-					.setColor(interaction.guild.me.displayHexColor)
-					.setFooter(`Requested by ${interaction.user.tag}`, interaction.user.displayAvatarURL({
-						dynamic: true
-					}))
-				if (command.name) {
-					embed.setTitle(`Command: ${command.name}`)
-				}
-				if (command.description) {
-					embed.setDescription(command.description)
-				}
-				if (command.example) {
-					embed.addField('Examples:', command.example.replaceAll('<@>', `<@${interaction.user.id}>`))
-				}
-				if (command.usage) {
-					embed.addField('Usage:', command.usage)
-				}
-				if (command.timeout) {
-					embed.addField('Timeout:', humanizeDuration(command.timeout, {
-						round: true
-					}))
-				}
-				interaction.reply({
-					embeds: [embed],
-					ephemeral: true
-				});
-			}
-		}
-	};
+	client.config.function.help({
+		client: client,
+		command: command,
+		embed: embed,
+		interaction: interaction
+	});
 	var guildData = await client.db.get(`guild${interaction.guild.id}`),
 		userData = await client.db.get(`user${user.id}`);
 	/*
