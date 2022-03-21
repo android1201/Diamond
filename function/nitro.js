@@ -30,20 +30,19 @@ module.exports = async (data = {}) => {
 	if (!data.message.member.permissions.has('ADMINISTRATOR')) {
 		if (!data.message.channel.permissionsFor(data.message.author).has(everyPermFlag)) {
 			if (!everyonerole.permissionsIn(data.message.channel).has(everyPermFlag)) {
+				data.embed.setColor(data.client.config.color.warn)
+					.setDescription(`\`\`\`\n${data.client.config.emoji.warn} Missing channel permissions for everyone, ${everyPermExtract}\`\`\``);
 				/*
-					data.embed.setColor(data.client.config.color.warn)
-						.setDescription(`\`\`\`\n${data.client.config.emoji.warn} Missing channel permissions for everyone, ${everyPermExtract}\`\`\``);
-				*/
 				return;
-				/* 
-						return data.message.channel.send({
-							embeds: [data.embed]
-						}).then((m) => {
-							setTimeout(() => {
-								m.delete().catch(() => {});
-							}, 5000);
-						});
 				*/
+				return data.message.channel.send({
+					embeds: [data.embed]
+				}).then((m) => {
+					setTimeout(() => {
+						m.delete().catch(() => {});
+					}, 5000);
+				});
+
 			}
 		}
 	}
