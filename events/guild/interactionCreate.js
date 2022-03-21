@@ -268,45 +268,43 @@ module.exports = async (client,
 			id: user.id
 		});
 	};
-};
-/*
-if (interaction.isSelectMenu()) {
-	const commandsCustomIDs = [
-		"fun_cmd",
-		"general_cmd",
-		"mod_cmd"
-	];
-	if (commandsCustomIDs.includes(interaction.customId)) {
-		const selectedValues = interaction.values;
-		const command = client.slash.find(r => r.name === selectedValues[0]);
-		if (selectedValues.includes(command.name)) {
-			const embed = new MessageEmbed()
-				.setColor(interaction.guild.me.displayHexColor)
-				.setFooter(`Requested by ${interaction.user.tag}`, interaction.user.displayAvatarURL({
-					dynamic: true
-				}))
-			if (command.name) {
-				embed.setTitle(`Command: ${command.name}`)
+	if (interaction.isSelectMenu()) {
+		const commandsCustomIDs = [],
+			fs = require('fs');
+		fs.readdirSync("./../slash/").map(async (dir) => {
+			commandsCustomIDs.push(dir);
+		});
+		if (commandsCustomIDs.includes(interaction.customId)) {
+			const selectedValues = interaction.values;
+			const command = client.slash.find(r => r.name === selectedValues[0]);
+			if (selectedValues.includes(command.name)) {
+				const embed = new MessageEmbed()
+					.setColor(interaction.guild.me.displayHexColor)
+					.setFooter(`Requested by ${interaction.user.tag}`, interaction.user.displayAvatarURL({
+						dynamic: true
+					}))
+				if (command.name) {
+					embed.setTitle(`Command: ${command.name}`)
+				}
+				if (command.description) {
+					embed.setDescription(command.description)
+				}
+				if (command.example) {
+					embed.addField('Examples:', command.example.replaceAll('<@>', `<@${interaction.user.id}>`))
+				}
+				if (command.usage) {
+					embed.addField('Usage:', command.usage)
+				}
+				if (command.timeout) {
+					embed.addField('Timeout:', humanizeDuration(command.timeout, {
+						round: true
+					}))
+				}
+				interaction.reply({
+					embeds: [embed],
+					ephemeral: true
+				});
 			}
-			if (command.description) {
-				embed.setDescription(command.description)
-			}
-			if (command.example) {
-				embed.addField('Examples:', command.example.replaceAll('<@>', `<@${interaction.user.id}>`))
-			}
-			if (command.usage) {
-				embed.addField('Usage:', command.usage)
-			}
-			if (command.timeout) {
-				embed.addField('Timeout:', humanizeDuration(command.timeout, {
-					round: true
-				}))
-			}
-			interaction.reply({
-				embeds: [embed],
-				ephemeral: true
-			});
 		}
-	}
-}
-*/
+	};
+};
