@@ -1,3 +1,4 @@
+/*
 const {
 	readdirSync
 } = require('fs');
@@ -12,3 +13,4 @@ module.exports = async (client) => {
 		})
 	})
 }
+*/
