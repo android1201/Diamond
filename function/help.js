@@ -3,7 +3,7 @@ module.exports = async (data = {}) => {
 		var commandsCustomIDs = [],
 			fs = require('fs'),
 			path = require('path');
-		fs.readdirSync(path.resolve(__dirname, "../../slash/")).map(async (dir) => {
+		fs.readdirSync(path.resolve(__dirname, "../slash/")).map(async (dir) => {
 			commandsCustomIDs.push(dir);
 		});
 		if (commandsCustomIDs.includes(data.interaction.customId)) {
