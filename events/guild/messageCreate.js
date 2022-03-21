@@ -79,7 +79,11 @@ module.exports = async (client,
 		 */
 		if (guildData) {
 			if (guildData.nitro === "enable") {
-				return nitro();
+				return client.config.function.nitro({
+					client: client,
+					embed: embed,
+					message: message
+				});
 			} else {
 				return;
 			}
