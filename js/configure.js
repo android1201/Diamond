@@ -35,10 +35,7 @@ module.exports = {
 		tits: ["952923435212873778"],
 		yuri: ["952923435212873778"]
 	},
-	class: {
-		guild: require('../class/guild.js'),
-			user: require('../class/user.js')
-	},
+	class: require("../class/a.js"),
 	color: {
 		default: "#55EFEE",
 		economy: "#48FA30",
@@ -72,7 +69,7 @@ module.exports = {
 		timer: "⏰",
 		warn: "🚧"
 	},
-	function: require("./function.js"),
+	function: require("../function/a.js"),
 	spotify: {
 		ID: "eeff5b6ea5a34ab88192747235a1cf05",
 		Secret: "278e79cf0521468d8a6e2525751c70f1"
