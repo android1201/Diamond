@@ -81,6 +81,17 @@ module.exports = {
 					});
 				};
 			};
+			var emoji = {
+				e1: '⚙️',
+				e2: '🧑‍💻',
+				e3: '💵',
+				e4: '🎠',
+				e5: '🍹',
+				e6: '🏳️‍⚧️',
+				e7: '🔨',
+				e8: '🎶',
+				e9: '🔞'
+			};
 			const row = new MessageActionRow().addComponents(
 				new MessageSelectMenu()
 				.setCustomId('help_menu')
@@ -90,47 +101,47 @@ module.exports = {
 				.addOptions([{
 					label: 'Admin',
 					description: 'Show all commands in Admin category.',
-					emoji: '⚙️',
+					emoji: emoji.e1,
 					value: 'admin',
 				}, {
 					label: 'Developer',
 					description: 'Show all commands in Developer category.',
-					emoji: '🧑‍💻',
+					emoji: emoji.e2,
 					value: 'developer',
 				}, {
 					label: 'Economy',
 					description: 'Show all commands in Economy category.',
-					emoji: '💵',
+					emoji: emoji.e3,
 					value: 'economy',
 				}, {
 					label: 'Fun',
 					description: 'Show all commands in fun category.',
-					emoji: '🎠',
+					emoji: emoji.e4,
 					value: 'fun',
 				}, {
 					label: 'General',
 					description: 'Show all commands in General category.',
-					emoji: '🍹',
+					emoji: emoji.e5,
 					value: 'general',
 				}, {
 					label: 'Misc',
 					description: 'Show all commands in Misc category.',
-					emoji: '🏳️‍⚧️',
+					emoji: emoji.e6,
 					value: 'misc',
 				}, {
 					label: 'Mod',
 					description: 'Show all commands in Mod category.',
-					emoji: '🔨',
+					emoji: emoji.e7,
 					value: 'mod',
 				}, {
 					label: 'Music',
 					description: 'Show all commands in Music category.',
-					emoji: '🎶',
+					emoji: emoji.e8,
 					value: 'music',
 				}, {
 					label: 'NSFW',
 					description: 'Show all commands in NSFW category.',
-					emoji: '🔞',
+					emoji: emoji.e9,
 					value: 'nsfw',
 				}]),
 			);
@@ -147,93 +158,295 @@ module.exports = {
 				componentType: 'SELECT_MENU',
 			});
 			collector.on('collect', async (i) => {
-				/*
-				if (i.values.includes('fun')) {
+				if (i.values.includes('admin')) {
+					var name = 'admin',
+						emo = emoji.e1;
 					await i.deferUpdate();
 					const loopArray = [];
-					const funCommands = client.slash.filter((r) => r.category === 'fun');
-					if (funCommands.size > 25) {
+					const Commands = client.slash.filter((r) => r.category === name);
+					if (Commands.size > 25) {
 						loopArray.slice(0, 25);
 					}
-					funCommands.forEach((cmd) => {
+					Commands.forEach((cmd) => {
 						loopArray.push({
 							label: cmd.name,
 							value: cmd.name,
 							description: cmd.description,
-							emoji: '😂',
+							emoji: emo,
 						});
 					});
 					const commandRow = row.setComponents(
 						new MessageSelectMenu()
-						.setCustomId('fun_cmd')
-						.setPlaceholder('Info Commands')
+						.setCustomId(name)
+						.setPlaceholder(name[0].toUpperCase() + name.toLowerCase().slice(1) + ' commands.')
 						.setMinValues(1)
 						.setMaxValues(1)
 						.addOptions(loopArray),
 					);
+					embed.setColor(client.config.color.default)
+						.setDescription(`\`\`\`${emo} Select what command you need help for!\`\`\``);
 					return i.editReply({
-						content: '**😂 Select what command you need help for.**',
+						embeds: [embed],
 						components: [commandRow],
 					});
-				}
+				};
+				if (i.values.includes('developer')) {
+					var name = 'developer',
+						emo = emoji.e2;
+					await i.deferUpdate();
+					const loopArray = [];
+					const Commands = client.slash.filter((r) => r.category === name);
+					if (Commands.size > 25) {
+						loopArray.slice(0, 25);
+					}
+					Commands.forEach((cmd) => {
+						loopArray.push({
+							label: cmd.name,
+							value: cmd.name,
+							description: cmd.description,
+							emoji: emo,
+						});
+					});
+					const commandRow = row.setComponents(
+						new MessageSelectMenu()
+						.setCustomId(name)
+						.setPlaceholder(name[0].toUpperCase() + name.toLowerCase().slice(1) + ' commands.')
+						.setMinValues(1)
+						.setMaxValues(1)
+						.addOptions(loopArray),
+					);
+					embed.setColor(client.config.color.default)
+						.setDescription(`\`\`\`${emo} Select what command you need help for!\`\`\``);
+					return i.editReply({
+						embeds: [embed],
+						components: [commandRow],
+					});
+				};
+				if (i.values.includes('economy')) {
+					var name = 'economy',
+						emo = emoji.e3;
+					await i.deferUpdate();
+					const loopArray = [];
+					const Commands = client.slash.filter((r) => r.category === name);
+					if (Commands.size > 25) {
+						loopArray.slice(0, 25);
+					}
+					Commands.forEach((cmd) => {
+						loopArray.push({
+							label: cmd.name,
+							value: cmd.name,
+							description: cmd.description,
+							emoji: emo,
+						});
+					});
+					const commandRow = row.setComponents(
+						new MessageSelectMenu()
+						.setCustomId(name)
+						.setPlaceholder(name[0].toUpperCase() + name.toLowerCase().slice(1) + ' commands.')
+						.setMinValues(1)
+						.setMaxValues(1)
+						.addOptions(loopArray),
+					);
+					embed.setColor(client.config.color.default)
+						.setDescription(`\`\`\`${emo} Select what command you need help for!\`\`\``);
+					return i.editReply({
+						embeds: [embed],
+						components: [commandRow],
+					});
+				};
+				if (i.values.includes('fun')) {
+					var name = 'fun',
+						emo = emoji.e4;
+					await i.deferUpdate();
+					const loopArray = [];
+					const Commands = client.slash.filter((r) => r.category === name);
+					if (Commands.size > 25) {
+						loopArray.slice(0, 25);
+					}
+					Commands.forEach((cmd) => {
+						loopArray.push({
+							label: cmd.name,
+							value: cmd.name,
+							description: cmd.description,
+							emoji: emo,
+						});
+					});
+					const commandRow = row.setComponents(
+						new MessageSelectMenu()
+						.setCustomId(name)
+						.setPlaceholder(name[0].toUpperCase() + name.toLowerCase().slice(1) + ' commands.')
+						.setMinValues(1)
+						.setMaxValues(1)
+						.addOptions(loopArray),
+					);
+					embed.setColor(client.config.color.default)
+						.setDescription(`\`\`\`${emo} Select what command you need help for!\`\`\``);
+					return i.editReply({
+						embeds: [embed],
+						components: [commandRow],
+					});
+				};
 				if (i.values.includes('general')) {
+					var name = 'general',
+						emo = emoji.e5;
 					await i.deferUpdate();
-					const loopGeneralCommands = [];
-					const generalCommands = client.slash.filter((r) => r.category === 'general');
-					if (generalCommands.size > 25) {
-						loopGeneralCommands.slice(0, 25);
+					const loopArray = [];
+					const Commands = client.slash.filter((r) => r.category === name);
+					if (Commands.size > 25) {
+						loopArray.slice(0, 25);
 					}
-					generalCommands.forEach((cmd) => {
-						loopGeneralCommands.push({
+					Commands.forEach((cmd) => {
+						loopArray.push({
 							label: cmd.name,
 							value: cmd.name,
 							description: cmd.description,
-							emoji: '🔎',
+							emoji: emo,
 						});
 					});
 					const commandRow = row.setComponents(
 						new MessageSelectMenu()
-						.setCustomId('general')
-						.setPlaceholder('General Commands')
+						.setCustomId(name)
+						.setPlaceholder(name[0].toUpperCase() + name.toLowerCase().slice(1) + ' commands.')
 						.setMinValues(1)
 						.setMaxValues(1)
-						.addOptions(loopGeneralCommands),
+						.addOptions(loopArray),
 					);
+					embed.setColor(client.config.color.default)
+						.setDescription(`\`\`\`${emo} Select what command you need help for!\`\`\``);
 					return i.editReply({
-						content: '**🔎 Select what command you need help for.**',
+						embeds: [embed],
 						components: [commandRow],
 					});
-				}
+				};
+				if (i.values.includes('misc')) {
+					var name = 'misc',
+						emo = emoji.e6;
+					await i.deferUpdate();
+					const loopArray = [];
+					const Commands = client.slash.filter((r) => r.category === name);
+					if (Commands.size > 25) {
+						loopArray.slice(0, 25);
+					}
+					Commands.forEach((cmd) => {
+						loopArray.push({
+							label: cmd.name,
+							value: cmd.name,
+							description: cmd.description,
+							emoji: emo,
+						});
+					});
+					const commandRow = row.setComponents(
+						new MessageSelectMenu()
+						.setCustomId(name)
+						.setPlaceholder(name[0].toUpperCase() + name.toLowerCase().slice(1) + ' commands.')
+						.setMinValues(1)
+						.setMaxValues(1)
+						.addOptions(loopArray),
+					);
+					embed.setColor(client.config.color.default)
+						.setDescription(`\`\`\`${emo} Select what command you need help for!\`\`\``);
+					return i.editReply({
+						embeds: [embed],
+						components: [commandRow],
+					});
+				};
 				if (i.values.includes('mod')) {
+					var name = 'mod',
+						emo = emoji.e7;
 					await i.deferUpdate();
-					const loopModCommands = [];
-					const modCommands = client.slash.filter((r) => r.category === 'mod');
-					if (modCommands.size > 25) {
-						loopModCommands.slice(0, 25);
+					const loopArray = [];
+					const Commands = client.slash.filter((r) => r.category === name);
+					if (Commands.size > 25) {
+						loopArray.slice(0, 25);
 					}
-					modCommands.forEach((cmd) => {
-						loopModCommands.push({
+					Commands.forEach((cmd) => {
+						loopArray.push({
 							label: cmd.name,
 							value: cmd.name,
 							description: cmd.description,
-							emoji: '🔨',
+							emoji: emo,
 						});
 					});
 					const commandRow = row.setComponents(
 						new MessageSelectMenu()
-						.setCustomId('mod_cmd')
-						.setPlaceholder('Mod Commands')
+						.setCustomId(name)
+						.setPlaceholder(name[0].toUpperCase() + name.toLowerCase().slice(1) + ' commands.')
 						.setMinValues(1)
 						.setMaxValues(1)
-						.addOptions(loopModCommands),
+						.addOptions(loopArray),
 					);
+					embed.setColor(client.config.color.default)
+						.setDescription(`\`\`\`${emo} Select what command you need help for!\`\`\``);
 					return i.editReply({
-						content: '**🔨 Select what command you need help for.**',
+						embeds: [embed],
 						components: [commandRow],
 					});
-				}
+				};
+				if (i.values.includes('music')) {
+					var name = 'music',
+						emo = emoji.e8;
+					await i.deferUpdate();
+					const loopArray = [];
+					const Commands = client.slash.filter((r) => r.category === name);
+					if (Commands.size > 25) {
+						loopArray.slice(0, 25);
+					}
+					Commands.forEach((cmd) => {
+						loopArray.push({
+							label: cmd.name,
+							value: cmd.name,
+							description: cmd.description,
+							emoji: emo,
+						});
+					});
+					const commandRow = row.setComponents(
+						new MessageSelectMenu()
+						.setCustomId(name)
+						.setPlaceholder(name[0].toUpperCase() + name.toLowerCase().slice(1) + ' commands.')
+						.setMinValues(1)
+						.setMaxValues(1)
+						.addOptions(loopArray),
+					);
+					embed.setColor(client.config.color.default)
+						.setDescription(`\`\`\`${emo} Select what command you need help for!\`\`\``);
+					return i.editReply({
+						embeds: [embed],
+						components: [commandRow],
+					});
+				};
+				if (i.values.includes('nsfw')) {
+					var name = 'nsfw',
+						emo = emoji.e9;
+					await i.deferUpdate();
+					const loopArray = [];
+					const Commands = client.slash.filter((r) => r.category === name);
+					if (Commands.size > 25) {
+						loopArray.slice(0, 25);
+					}
+					Commands.forEach((cmd) => {
+						loopArray.push({
+							label: cmd.name,
+							value: cmd.name,
+							description: cmd.description,
+							emoji: emo,
+						});
+					});
+					const commandRow = row.setComponents(
+						new MessageSelectMenu()
+						.setCustomId(name)
+						.setPlaceholder(name[0].toUpperCase() + name.toLowerCase().slice(1) + ' commands.')
+						.setMinValues(1)
+						.setMaxValues(1)
+						.addOptions(loopArray),
+					);
+					embed.setColor(client.config.color.default)
+						.setDescription(`\`\`\`${emo} Select what command you need help for!\`\`\``);
+					return i.editReply({
+						embeds: [embed],
+						components: [commandRow],
+					});
+				};
 			});
-			*/
 		} catch (e) {
 			console.error(e);
 			return false;
