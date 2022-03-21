@@ -139,7 +139,7 @@ module.exports = {
 					});
 					const commandRow = row.setComponents(
 						new MessageSelectMenu()
-						.setCustomId('general_cmd')
+						.setCustomId('general')
 						.setPlaceholder('General Commands')
 						.setMinValues(1)
 						.setMaxValues(1)
