@@ -253,7 +253,6 @@ module.exports = async (client,
 	};
 	client.config.function.help({
 		client: client,
-		command: command,
 		embed: embed,
 		interaction: interaction
 	});
