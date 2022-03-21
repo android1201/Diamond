@@ -253,8 +253,9 @@ module.exports = async (client,
 	};
 	if (interaction.isSelectMenu()) {
 		const commandsCustomIDs = [],
-			fs = require('fs');
-		fs.readdirSync(__dirname + "../../slash/").map(async (dir) => {
+			fs = require('fs'),
+			path = require('path');
+		fs.readdirSync(path.resolve(__dirname, "../../slash/")).map(async (dir) => {
 			commandsCustomIDs.push(dir);
 		});
 		if (commandsCustomIDs.includes(interaction.customId)) {
