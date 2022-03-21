@@ -66,7 +66,7 @@ module.exports = async (data = {}) => {
 				}
 			}
 			if (perms.length) {
-				var d = invalidPermissions.map(value => `${value[0].toUpperCase() + value.toLowerCase().slice(1).replace(/_/g, ' ')}`).join(`, `);
+				var d = perms.map(value => `${value[0].toUpperCase() + value.toLowerCase().slice(1).replace(/_/g, ' ')}`).join(`, `);
 				data.embed.setColor(data.client.config.color.warn)
 					.setDescription(`\`\`\`\n${data.client.config.emoji.warn} Missing channel permissions for ${data.client.user.tag}, ${d}\`\`\``);
 				return data.message.channel.send({
