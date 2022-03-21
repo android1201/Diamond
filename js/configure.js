@@ -5,7 +5,6 @@ module.exports = {
 		short_url: "" || process.env.short_url // https://i8.ae/api/url/add/
 	},
 	bot: {
-		id: "955013557710372865",
 		mongo: process.env.mongo ? process.env.mongo : "",
 		owners: ["952998986824953866"],
 		server: "953691188425285682",
