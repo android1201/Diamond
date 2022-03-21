@@ -73,7 +73,7 @@ module.exports = {
 						}
 					}
 					embed.setColor(client.config.color.default)
-						.setDescription(`\`\`\`{client.config.emoji.info} General:\n	Name: ${nme}\n	Description: ${dsn}\n	Usage: ${usg}\n	Cooldown: ${cld}\n	Category: ${ctg}\n{client.config.emoji.access} Permissions:\n	BCP: ${bcp}\n	BRP: ${brp}\n	UCP: ${ucp}\n	URP: ${urp}\n	Admin: ${admin}\n	Mod: ${mod}\n	Owner: ${onr}\n	Developer: ${dvp}\n{client.config.emoji.types} Types:\n	Vc: ${vic}\`\`\``);
+						.setDescription(`\`\`\`${client.config.emoji.info} General:\n	Name: ${nme}\n	Description: ${dsn}\n	Usage: ${usg}\n	Cooldown: ${cld}\n	Category: ${ctg}\n${client.config.emoji.access} Permissions:\n	BCP: ${bcp}\n	BRP: ${brp}\n	UCP: ${ucp}\n	URP: ${urp}\n	Admin: ${admin}\n	Mod: ${mod}\n	Owner: ${onr}\n	Developer: ${dvp}\n${client.config.emoji.types} Types:\n	Vc: ${vic}\`\`\``);
 					interaction.reply({
 						embeds: [embed],
 						ephemeral: true
