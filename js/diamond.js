@@ -63,9 +63,13 @@ var neko = require('nekos.life'),
 /*
  * client database
  */
+/*
 client.aliases = new Discord.Collection();
+*/
 client.categories = new Discord.Collection();
+/*
 client.commands = new Discord.Collection();
+*/
 client.config = require('./configure.js');
 client.discord = Discord;
 client.events = new Discord.Collection();
