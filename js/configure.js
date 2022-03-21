@@ -58,13 +58,15 @@ module.exports = {
 		}
 	},
 	emoji: {
+		access: "🔑",
 		bin: "🗑️",
 		data: "📒",
 		economy: "💵",
 		error: "❌",
-		info: "⚙️",
+		info: "📝",
 		success: "☑️",
 		timer: "⏰",
+		types: "🏳️‍⚧️",
 		warn: "🚧"
 	},
 	function: require("../function/a.js"),
