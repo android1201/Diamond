@@ -72,7 +72,7 @@ module.exports = {
 							urp = cmd.userRolePermissions.map(value => `${value[0].toUpperCase() + value.toLowerCase().slice(1).replace(/_/g, ' ')}`).join(`, `);
 						}
 					}
-					embed.setColor(data.client.config.color.default)
+					embed.setColor(client.config.color.default)
 						.setDescription(`\`\`\`\nName: ${nme}\nDescription: ${dsn}\nUsage: ${usg}\nCooldown: ${cld}\nCategory: ${ctg}\nPermissions:\n	BCP: ${bcp}\n	BRP: ${brp}\n	UCP: ${ucp}\n	URP: ${urp}\n	Admin: ${admin}\n	Mod: ${mod}\n	Owner: ${onr}\n	Developer: ${dvp}\nTypes:\n	Vc: ${vic}\`\`\``);
 					interaction.reply({
 						embeds: [embed],
