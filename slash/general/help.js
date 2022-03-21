@@ -33,7 +33,7 @@ module.exports = {
 					embed.setColor(client.config.color.error)
 						.setDescription(`\`\`\`${client.config.emoji.error} I can't find ${command} command!\`\`\``)
 					return interaction.reply({
-						content: `I can't find ${command} command!`,
+						embeds: [embed],
 						ephemeral: true
 					});
 				};
