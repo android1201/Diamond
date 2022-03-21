@@ -13,7 +13,7 @@ module.exports = async (data = {}) => {
 				var nme = command.name ? command.name[0].toUpperCase() + command.name.toLowerCase().slice(1) : 'Name not given',
 					dsn = command.description ? command.description : 'Description not given',
 					usg = command.usage ? command.usage : 'Usage not given',
-					cld = command.cooldown ? command.cooldown : 'Usage not given',
+					cld = command.cooldown ? command.cooldown : 'Cooldown not given',
 					ctg = command.category ? command.category : 'Category not given',
 					vic = command.vc ? 'Yes' : 'No',
 					mod = command.mod ? 'Yes' : 'No',
