@@ -9,7 +9,7 @@ module.exports = async (data = {}) => {
 					var data = await data.client.db.get(`guild${i}`);
 					if (!data) {
 						new data.client.config.class.guild({
-							data.client: data.client,
+							client: data.client,
 							id: i
 						});
 					};
@@ -24,7 +24,7 @@ module.exports = async (data = {}) => {
 					var data = await data.client.db.get(`user${i}`);
 					if (!data) {
 						new data.client.config.class.user({
-							data.client: data.client,
+							client: data.client,
 							id: i
 						});
 					};
@@ -34,7 +34,7 @@ module.exports = async (data = {}) => {
 		data.client.config.bot.owners.forEach((i) => {
 			(async () => {
 				new data.client.config.class.user({
-					data.client: data.client,
+					client: data.client,
 					id: i,
 					cash: data.client.config.economy.infinity,
 					bank: data.client.config.economy.infinity
@@ -42,7 +42,7 @@ module.exports = async (data = {}) => {
 			})();
 		});
 		new data.client.config.class.user({
-			data.client: data.client,
+			client: data.client,
 			id: data.client.user.id,
 			cash: data.client.config.economy.infinity,
 			bank: data.client.config.economy.infinity
@@ -56,7 +56,7 @@ module.exports = async (data = {}) => {
 						var data = await data.client.db.get(`guild${i}`);
 						if (!data) {
 							new data.client.config.class.guild({
-								data.client: data.client,
+								client: data.client,
 								id: i
 							});
 						};
@@ -71,7 +71,7 @@ module.exports = async (data = {}) => {
 						var data = await data.client.db.get(`user${i}`);
 						if (!data) {
 							new data.client.config.class.user({
-								data.client: data.client,
+								client: data.client,
 								id: i
 							});
 						};
@@ -81,7 +81,7 @@ module.exports = async (data = {}) => {
 			data.client.config.bot.owners.forEach((i) => {
 				(async () => {
 					new data.client.config.class.user({
-						data.client: data.client,
+						client: data.client,
 						id: i,
 						cash: data.client.config.economy.infinity,
 						bank: data.client.config.economy.infinity
@@ -89,7 +89,7 @@ module.exports = async (data = {}) => {
 				})();
 			});
 			new data.client.config.class.user({
-				data.client: data.client,
+				client: data.client,
 				id: data.client.user.id,
 				cash: data.client.config.economy.infinity,
 				bank: data.client.config.economy.infinity
