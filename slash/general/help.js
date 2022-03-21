@@ -14,6 +14,17 @@ module.exports = {
 			MessageActionRow,
 			MessageSelectMenu
 		} = client.discord,
+			embed = new client.discord.MessageEmbed({
+				author: {
+					name: interaction.member.user.tag
+				},
+				color: client.config.color.default,
+				timestamp: new Date(),
+				footer: {
+					text: interaction.member.user.id,
+					icon_url: interaction.member.user.displayAvatarURL()
+				},
+			}),
 			humanizeDuration = require('humanize-duration');
 		try {
 			const command = interaction.options.getString('command');
@@ -70,8 +81,10 @@ module.exports = {
 					},
 				]),
 			);
+			embed.setColor(client.config.color.default)
+				.setDescription(`\`\`\`${client.config.emoji.data} Select category you need help for!\`\`\``);
 			interaction.reply({
-				content: '**👋 Select Category You Need Help For**',
+				embeds: [embed],
 				components: [row]
 			});
 			const filter = (i) => i.customId === 'help_menu' || ('selected_command' && i.user.id === interaction.user.id);
