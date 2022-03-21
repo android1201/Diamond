@@ -8,6 +8,7 @@ module.exports = {
 		type: 3,
 	}, ],
 	category: 'general',
+	cooldown: 5,
 	run: async (interaction, client) => {
 		const {
 			MessageEmbed,
