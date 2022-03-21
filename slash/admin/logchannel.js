@@ -10,7 +10,7 @@ module.exports = {
 		channel_types: [0]
 	}],
 	cooldown: 7,
-	category: "settings",
+	category: "admin",
 	run: async (interaction, client) => {
 		var channel = interaction.options.getChannel('channel'),
 			embed = new client.discord.MessageEmbed({
