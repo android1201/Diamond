@@ -15,7 +15,7 @@ module.exports = {
 			type: 6
 		}
 	],
-	category: "moderator",
+	category: "mod",
 	run: async (interaction, client) => {
 		var embed = new client.discord.MessageEmbed({
 			author: {
