@@ -7,7 +7,7 @@ module.exports = {
 	bot: {
 		id: "955013557710372865",
 		mongo: process.env.mongo ? process.env.mongo : "",
-		owners: ["952998986824953866"],
+		owners: ["52998986824953866"],
 		prefix: "d?",
 		server: "953691188425285682",
 		status: "STREAMING",
