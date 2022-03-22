@@ -41,6 +41,8 @@ module.exports = {
 				};
 				if (cmd) {
 					client.config.function.helpEmbed({
+						channel: interaction,
+						client: client,
 						command: cmd,
 						embed: embed
 					});
