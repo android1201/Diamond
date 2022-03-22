@@ -10,6 +10,7 @@ module.exports = async (data = {}) => {
 		admin = command.admin ? 'Yes' : 'No',
 		dvp = command.developer ? 'Yes' : 'No',
 		onr = command.guildOwner ? 'Yes' : 'No',
+		nsfw = command.nsfw ? 'Yes' : 'No',
 		bcp = 'Not given',
 		brp = 'Not given',
 		ucp = 'Not given',
@@ -35,7 +36,7 @@ module.exports = async (data = {}) => {
 		}
 	}
 	data.embed.setColor(data.client.config.color.default)
-		.setDescription(`\`\`\`${data.client.config.emoji.info} General:\n	Name: ${nme}\n	Description: ${dsn}\n	Usage: ${usg}\n	Cooldown: ${cld}\n	Category: ${ctg}\n${data.client.config.emoji.access} Permissions:\n	BCP: ${bcp}\n	BRP: ${brp}\n	UCP: ${ucp}\n	URP: ${urp}\n	Admin: ${admin}\n	Mod: ${mod}\n	Owner: ${onr}\n	Developer: ${dvp}\n${data.client.config.emoji.types} Types:\n	Vc: ${vic}\`\`\``);
+		.setDescription(`\`\`\`${data.client.config.emoji.info} General:\n	Name: ${nme}\n	Description: ${dsn}\n	Usage: ${usg}\n	Cooldown: ${cld}\n	Category: ${ctg}\n${data.client.config.emoji.access} Permissions:\n	BCP: ${bcp}\n	BRP: ${brp}\n	UCP: ${ucp}\n	URP: ${urp}\n	Admin: ${admin}\n	Mod: ${mod}\n	Owner: ${onr}\n	Developer: ${dvp}\n${data.client.config.emoji.types} Types:\n	Vc: ${vic}\n	NSFW: ${nsfw}\`\`\``);
 	data.interaction.reply({
 		embeds: [data.embed],
 		ephemeral: true
