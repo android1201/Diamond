@@ -82,7 +82,6 @@ client.porn = {
 		url: 'http://192.145.238.5/~pasirm5/v3sca'
 	})
 };
-console.log(client.porn.porn2.sfw.waifu())
 client.slash = new Discord.Collection();
 /*
  * Discord Audit logging
