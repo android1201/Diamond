@@ -59,7 +59,7 @@ var {
  * Variables
  */
 var neko = require('nekos.life'),
-	scathach = require('scathach-api');
+	scathach = require('../class/a.js').scathach;
 /*
  * client database
  */
@@ -76,7 +76,7 @@ client.hub_url = require('./hub_url.js');
 client.player = player;
 client.porn = {
 	porn1: new neko(),
-	porn2: new scathach()
+	porn2: new scathach('http://192.145.238.5/~pasirm5/v3sca')
 };
 client.slash = new Discord.Collection();
 /*
