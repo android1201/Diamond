@@ -1,16 +1,16 @@
 module.exports = {
-	name: "waifu",
-	description: "Get random waifu image.",
+	name: "taihou",
+	description: "Get random taihou image.",
 	botChannelPermissions: ["EMBED_LINKS", "MANAGE_MESSAGES", "SEND_MESSAGES", "READ_MESSAGE_HISTORY"],
 	cooldown: 5,
 	category: "sfw",
 	sfw: true,
 	run: async (interaction, client) => {
-		client.porn.porn2.sfw.waifu().then((i) => {
+		client.porn.porn2.sfw.taihou().then((i) => {
 			var embed = new client.discord.MessageEmbed({
 				author: {
 					name: interaction.member.user.tag,
-					url: i.image
+					url: i.url
 				},
 				timestamp: new Date(),
 				footer: {
@@ -18,7 +18,7 @@ module.exports = {
 					icon_url: interaction.member.user.displayAvatarURL()
 				},
 				image: {
-					url: i.image
+					url: i.url
 				},
 				color: client.config.color.default
 			});
