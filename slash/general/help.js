@@ -133,7 +133,7 @@ module.exports = {
 			const filter = (i) => i.customId === 'help_menu' || ('selected_command' && i.user.id === interaction.user.id);
 			const collector = interaction.channel.createMessageComponentCollector({
 				filter: filter,
-				max: 2,
+				max: 11,
 				componentType: 'SELECT_MENU',
 			});
 			collector.on('collect', async (i) => {
