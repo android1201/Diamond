@@ -189,6 +189,24 @@ module.exports = async (client,
 				}
 			}
 			/*
+			 * nsfw
+			 */
+			if (command.nsfw) {
+				const {
+					nsfw
+				} = channel;
+				if (!nsfw) {
+					embed.setDescription(`\`\`\`\n${client.config.emoji.warn} You have to be enable nsfw before you can use this command!\`\`\``);
+					return interaction.reply({
+						embeds: [embed]
+					}).then((m) => {
+						setTimeout(() => {
+							interaction.deleteReply().catch(() => {});
+						}, 5000);
+					});
+				}
+			};
+			/*
 			 * vc
 			 */
 			if (command.vc) {
