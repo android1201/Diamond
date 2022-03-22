@@ -59,7 +59,9 @@ var {
  * Variables
  */
 var neko = require('nekos.life'),
-	scathach = require('../class/a.js').scathach;
+	{
+		scathach
+	} = require('../class/a.js');
 /*
  * client database
  */
