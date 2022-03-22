@@ -22,7 +22,6 @@ module.exports = {
 				embeds: [embed]
 			});
 		}).catch((e) => {
-			console.log(e);
 			embed.setColor(client.config.color.error)
 				.setDescription(`\`\`\`\n${client.config.emoji.error} Error while executing command!\`\`\``);
 			return interaction.reply({
