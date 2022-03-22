@@ -40,6 +40,10 @@ module.exports = {
 					});
 				};
 				if (cmd) {
+					client.config.function.helpEmbed({
+						command: cmd,
+						embed: embed
+					});
 				};
 			};
 			var emoji = {
