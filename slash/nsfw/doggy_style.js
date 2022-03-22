@@ -1,12 +1,12 @@
 module.exports = {
-	name: "ahegao",
-	description: "Get random ahegao image.",
+	name: "doggy_style",
+	description: "Get random doggy_style image.",
 	botChannelPermissions: ["EMBED_LINKS", "MANAGE_MESSAGES", "SEND_MESSAGES", "READ_MESSAGE_HISTORY"],
 	cooldown: 5,
 	category: "nsfw",
 	nsfw: true,
 	run: async (interaction, client) => {
-		client.porn.porn2.nsfw.ahegao().then((i) => {
+		client.porn.porn2.nsfw.doggy_style().then((i) => {
 			var embed = new client.discord.MessageEmbed({
 				author: {
 					name: interaction.member.user.tag,
