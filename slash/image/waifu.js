@@ -16,8 +16,11 @@ module.exports = {
 			}
 		});
 		client.porn.porn2.sfw.waifu().then((i) => {
-			embed.setImage(i.url)
-				.setColor(client.config.color.default);
+			embed.setImage(i.image)
+				.setColor(client.config.color.default)
+				.setAuthor({
+					url: i.image
+				});
 			return interaction.reply({
 				embeds: [embed]
 			});
