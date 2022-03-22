@@ -254,7 +254,7 @@ module.exports = async (client,
 	client.config.function.help({
 		client: client,
 		embed: embed,
-		interaction: interaction
+		channel: interaction
 	});
 	var guildData = await client.db.get(`guild${interaction.guild.id}`),
 		userData = await client.db.get(`user${user.id}`);
