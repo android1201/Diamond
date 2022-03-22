@@ -18,7 +18,10 @@ module.exports = {
 		});
 		client.porn.porn2.sfw.safebooru().then((i) => {
 			embed.setImage(i.url)
-				.setColor(client.config.color.default);
+				.setColor(client.config.color.default)
+				.setAuthor({
+					url: i.url
+				});
 			return interaction.reply({
 				embeds: [embed]
 			});
