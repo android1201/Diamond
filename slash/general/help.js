@@ -40,46 +40,6 @@ module.exports = {
 					});
 				};
 				if (cmd) {
-					var nme = cmd.name ? cmd.name[0].toUpperCase() + cmd.name.toLowerCase().slice(1) : 'Name not given',
-						dsn = cmd.description ? cmd.description : 'Description not given',
-						usg = cmd.usage ? cmd.usage : 'Usage not given',
-						cld = cmd.cooldown ? cmd.cooldown : 'Cooldown not given',
-						ctg = cmd.category ? cmd.category : 'Category not given',
-						vic = cmd.vc ? 'Yes' : 'No',
-						mod = cmd.mod ? 'Yes' : 'No',
-						admin = cmd.admin ? 'Yes' : 'No',
-						dvp = cmd.developer ? 'Yes' : 'No',
-						onr = cmd.guildOwner ? 'Yes' : 'No',
-						bcp = 'Not given',
-						brp = 'Not given',
-						ucp = 'Not given',
-						urp = 'Not given';
-					if (cmd.botChannelPermissions) {
-						if (cmd.botChannelPermissions.length) {
-							bcp = cmd.botChannelPermissions.map(value => `${value[0].toUpperCase() + value.toLowerCase().slice(1).replace(/_/g, ' ')}`).join(`, `);
-						}
-					}
-					if (cmd.botRolePermissions) {
-						if (cmd.botRolePermissions.length) {
-							brp = cmd.botRolePermissions.map(value => `${value[0].toUpperCase() + value.toLowerCase().slice(1).replace(/_/g, ' ')}`).join(`, `);
-						}
-					}
-					if (cmd.userChannelPermissions) {
-						if (cmd.userChannelPermissions.length) {
-							ucp = cmd.userChannelPermissions.map(value => `${value[0].toUpperCase() + value.toLowerCase().slice(1).replace(/_/g, ' ')}`).join(`, `);
-						}
-					}
-					if (cmd.userRolePermissions) {
-						if (cmd.userRolePermissions.length) {
-							urp = cmd.userRolePermissions.map(value => `${value[0].toUpperCase() + value.toLowerCase().slice(1).replace(/_/g, ' ')}`).join(`, `);
-						}
-					}
-					embed.setColor(client.config.color.default)
-						.setDescription(`\`\`\`${client.config.emoji.info} General:\n	Name: ${nme}\n	Description: ${dsn}\n	Usage: ${usg}\n	Cooldown: ${cld}\n	Category: ${ctg}\n${client.config.emoji.access} Permissions:\n	BCP: ${bcp}\n	BRP: ${brp}\n	UCP: ${ucp}\n	URP: ${urp}\n	Admin: ${admin}\n	Mod: ${mod}\n	Owner: ${onr}\n	Developer: ${dvp}\n${client.config.emoji.types} Types:\n	Vc: ${vic}\`\`\``);
-					interaction.reply({
-						embeds: [embed],
-						ephemeral: true
-					});
 				};
 			};
 			var emoji = {
