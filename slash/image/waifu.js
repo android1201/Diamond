@@ -27,6 +27,10 @@ module.exports = {
 				.setDescription(`\`\`\`\n${client.config.emoji.error} Error while executing command!\`\`\``);
 			return interaction.reply({
 				embeds: [embed]
+			}).then(() => {
+				setTimeout(() => {
+					interaction.deleteReply().catch(() => {});
+				}, 5000);
 			});
 		});
 	}
