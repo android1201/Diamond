@@ -286,7 +286,6 @@ module.exports = {
 		"dido": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=dido_(azur_lane)",
 		"hood": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=hood_(azur_lane)",
 		"formidable": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=formidable_(azur_lane)",
-
 		"jean": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=jean_gunnhildr",
 		"beidou": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=beidou_(genshin_impact)",
 		"mona": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=mona_(genshin_impact)",
