@@ -40,7 +40,8 @@ module.exports = {
 					});
 				};
 				if (cmd) {
-					client.config.function.helpEmbed({
+					return client.config.function.helpEmbed({
+						client: client,
 						channel: interaction,
 						command: cmd,
 						embed: embed
