@@ -25,6 +25,7 @@
     "fs": "^0.0.1-security",
     "glob": "^7.2.0",
     "humanize-duration": "^3.27.1",
+    "http": "^0.0.1-security",
     "mongoose": "^6.2.2",
     "ms": "^2.1.3",
     "nekos.life": "^2.0.9",
@@ -33,7 +34,8 @@
     "quick.db": "^7.1.3",
     "quickmongo": "^5.1.2",
     "randomcolor": "^0.6.2",
-    "scathach-api": "^0.0.8"
+    "scathach-api": "^0.0.8",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
