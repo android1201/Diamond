@@ -16,10 +16,17 @@ module.exports = {
 			}
 		});
 		client.porn.porn2.sfw.waifu().then((i) => {
-			embed.setImage(i.image)
-				.setColor(client.config.color.default)
+			embed.setImage(i.url)
+				.setColor(client.config.color.default);
+			return interaction.reply({
+				embeds: [embed]
+			});
 		}).catch(() => {
-
+			embed.setColor(client.config.color.error)
+				.setDescription(`\`\`\`\n${client.config.emoji.error} Error while executing command!\`\`\``);
+			return interaction.reply({
+				embeds: [embed]
+			});
 		});
 	}
 };
