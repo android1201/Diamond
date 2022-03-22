@@ -299,11 +299,6 @@ module.exports = {
 		"furry": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=furry",
 		"waifu": "http://192.145.238.5/~pasirm5/v3sca/sfw/waifu.php"
 	},
-	"dota": {
-		"elwono": "http://192.145.238.5/~pasirm5/v3sca/dota/elwono/",
-		"wtf": "http://192.145.238.5/~pasirm5/v3sca/dota/wtf/",
-		"pub": "http://192.145.238.5/~pasirm5/v3sca/dota/pub/"
-	},
 	"sex": {
 		"slut": "http://192.145.238.5/~pasirm5/v3sca/nsfw/rb/?tags=slut",
 		"porn_star": "http://192.145.238.5/~pasirm5/v3sca/nsfw/rb/?tags=porn_star",
@@ -345,7 +340,7 @@ module.exports = {
 		"deepthroat": "http://192.145.238.5/~pasirm5/v3sca/nsfw/rb/?tags=deepthroat",
 		"bbc": "http://192.145.238.5/~pasirm5/v3sca/nsfw/rb/?tags=bbc"
 	},
-	"animated": {
+	"gif": {
 		"blowjob": "http://192.145.238.5/~pasirm5/v3sca/nsfw/animated/?tags=blowjob",
 		"missionary": "http://192.145.238.5/~pasirm5/v3sca/nsfw/animated/?tags=missionary",
 		"cowgirl": "http://192.145.238.5/~pasirm5/v3sca/nsfw/animated/?tags=cowgirl",
