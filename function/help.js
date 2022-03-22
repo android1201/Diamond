@@ -10,7 +10,7 @@ module.exports = async (data = {}) => {
 			const selectedValues = data.interaction.values,
 				command = data.client.slash.find(r => r.name === selectedValues[0]);
 			if (selectedValues.includes(command.name)) {
-				client.config.function.helpEmbed({
+				data.client.config.function.helpEmbed({
 					command: command,
 					embed: data.embed
 				});
