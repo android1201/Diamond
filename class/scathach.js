@@ -1,11 +1,11 @@
 const {
 	get
-} = require('http'),
-	{
-	URL,
-	URLSearchParams
-} = require('url'),
+} = require('http'), {
+		URL,
+		URLSearchParams
+	} = require('url'),
 	endpoints = require('../endpoint/scathach.js');
+
 function getContent(url) {
 	return new Promise((resolve, reject) => {
 		get(url, (res) => {
@@ -36,36 +36,19 @@ function getContent(url) {
 };
 module.exports = class scathach {
 	constructor(data = {}) {
-		let self = this,
-			baseURL = data.url ? data.url : 'http://192.145.238.5/~pasirm5/v3sca';
-		self.animated = {};
-		self.nsfw = {};
-		self.sex = {};
-		self.sfw = {};
-		Object.keys(endpoints.animated).forEach(async (endpoint) => {
-			self.animated[endpoint] = async function(queryParams = '') {
-				let url = new URL(`${baseURL}${endpoints.animated[endpoint]}`);
-				queryParams !== '' ? url.search = new URLSearchParams(queryParams) : '';
-				return await getContent(url.toString());
-			};
-		});
+		var baseURL = data.url ? data.url : 'http://192.145.238.5/~pasirm5/v3sca';
+		this.nsfw = {};
+		this.sfw = {};
 		Object.keys(endpoints.nsfw).forEach(async (endpoint) => {
-			self.nsfw[endpoint] = async function(queryParams = '') {
-				let url = new URL(`${baseURL}${endpoints.nsfw[endpoint]}`);
-				queryParams !== '' ? url.search = new URLSearchParams(queryParams) : '';
-				return await getContent(url.toString());
-			};
-		});
-		Object.keys(endpoints.sex).forEach(async (endpoint) => {
-			self.sex[endpoint] = async function(queryParams = '') {
-				let url = new URL(`${baseURL}${endpoints.sex[endpoint]}`);
+			this.nsfw[endpoint] = async function(queryParams = '') {
+				let url = new URL(`${baseURL}${this.nsfw[endpoint]}`);
 				queryParams !== '' ? url.search = new URLSearchParams(queryParams) : '';
 				return await getContent(url.toString());
 			};
 		});
 		Object.keys(endpoints.sfw).forEach(async (endpoint) => {
-			self.sfw[endpoint] = async function(queryParams = '') {
-				let url = new URL(`${baseURL}${endpoints.sfw[endpoint]}`);
+			this.sfw[endpoint] = async function(queryParams = '') {
+				let url = new URL(`${baseURL}${this.sfw[endpoint]}`);
 				queryParams !== '' ? url.search = new URLSearchParams(queryParams) : '';
 				return await getContent(url.toString());
 			};
