@@ -40,7 +40,6 @@ module.exports = class scathach {
 		let self = this;
 		self.animated = {};
 		self.nsfw = {};
-		self.porn = {};
 		self.sex = {};
 		self.sfw = {};
 		Object.keys(endpoints.animated).forEach(async (endpoint) => {
@@ -53,13 +52,6 @@ module.exports = class scathach {
 		Object.keys(endpoints.nsfw).forEach(async (endpoint) => {
 			self.nsfw[endpoint] = async function(queryParams = '') {
 				let url = new URL(`${baseURL}${endpoints.nsfw[endpoint]}`);
-				queryParams !== '' ? url.search = new URLSearchParams(queryParams) : '';
-				return await getContent(url.toString());
-			};
-		});
-		Object.keys(endpoints.porn).forEach(async (endpoint) => {
-			self.porn[endpoint] = async function(queryParams = '') {
-				let url = new URL(`${baseURL}${endpoints.porn[endpoint]}`);
 				queryParams !== '' ? url.search = new URLSearchParams(queryParams) : '';
 				return await getContent(url.toString());
 			};
