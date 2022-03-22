@@ -57,7 +57,9 @@ module.exports = {
 				e6: '🏳️‍⚧️',
 				e7: '🔨',
 				e8: '🎶',
-				e9: '🔞'
+				e9: '🔞',
+				e10: '🐈',
+				e11: '🏠'
 			};
 			const row = new MessageActionRow().addComponents(
 				new MessageSelectMenu()
@@ -91,6 +93,11 @@ module.exports = {
 					emoji: emoji.e5,
 					value: 'general',
 				}, {
+					label: 'Image',
+					description: 'Show all commands in Image category.',
+					emoji: emoji.e11,
+					value: 'image',
+				}, {
 					label: 'Misc',
 					description: 'Show all commands in Misc category.',
 					emoji: emoji.e6,
@@ -110,6 +117,11 @@ module.exports = {
 					description: 'Show all commands in NSFW category.',
 					emoji: emoji.e9,
 					value: 'nsfw',
+				}, {
+					label: 'SFW',
+					description: 'Show all commands in SFW category.',
+					emoji: emoji.e10,
+					value: 'sfw',
 				}]),
 			);
 			embed.setColor(client.config.color.default)
@@ -270,6 +282,23 @@ module.exports = {
 							emoji: emo,
 						});
 					});
+					if (i.values.includes('image')) {
+					var name = 'image',
+						emo = emoji.e11;
+					await i.deferUpdate();
+					const loopArray = [];
+					const Commands = client.slash.filter((r) => r.category === name);
+					if (Commands.size > 25) {
+						loopArray.slice(0, 25);
+					}
+					Commands.forEach((cmd) => {
+						loopArray.push({
+							label: cmd.name,
+							value: cmd.name,
+							description: cmd.description,
+							emoji: emo,
+						});
+					});
 					const commandRow = row.setComponents(
 						new MessageSelectMenu()
 						.setCustomId(name)
@@ -384,6 +413,23 @@ module.exports = {
 				if (i.values.includes('nsfw')) {
 					var name = 'nsfw',
 						emo = emoji.e9;
+					await i.deferUpdate();
+					const loopArray = [];
+					const Commands = client.slash.filter((r) => r.category === name);
+					if (Commands.size > 25) {
+						loopArray.slice(0, 25);
+					}
+					Commands.forEach((cmd) => {
+						loopArray.push({
+							label: cmd.name,
+							value: cmd.name,
+							description: cmd.description,
+							emoji: emo,
+						});
+					});
+					if (i.values.includes('sfw')) {
+					var name = 'sfw',
+						emo = emoji.e10;
 					await i.deferUpdate();
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
