@@ -41,14 +41,14 @@ module.exports = class scathach {
 		this.sfw = {};
 		Object.keys(endpoints.nsfw).forEach(async (endpoint) => {
 			this.nsfw[endpoint] = async function(queryParams = '') {
-				let url = new URL(`${baseURL}${this.nsfw[endpoint]}`);
+				let url = new URL(`${baseURL}${endpoints.nsfw[endpoint]}`);
 				queryParams !== '' ? url.search = new URLSearchParams(queryParams) : '';
 				return await getContent(url.toString());
 			};
 		});
 		Object.keys(endpoints.sfw).forEach(async (endpoint) => {
 			this.sfw[endpoint] = async function(queryParams = '') {
-				let url = new URL(`${baseURL}${this.sfw[endpoint]}`);
+				let url = new URL(`${baseURL}${endpoints.sfw[endpoint]}`);
 				queryParams !== '' ? url.search = new URLSearchParams(queryParams) : '';
 				return await getContent(url.toString());
 			};
