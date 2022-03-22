@@ -17,13 +17,23 @@ module.exports = {
 			}
 		});
 		client.porn.porn2.sfw.safebooru().then((i) => {
-			embed.setImage(i.url)
-				.setColor(client.config.color.default)
-				.setAuthor({
+			var embed2 = new client.discord.MessageEmbed({
+				author: {
+					name: interaction.member.user.tag,
 					url: i.url
-				});
+				},
+				timestamp: new Date(),
+				footer: {
+					text: interaction.member.user.id,
+					icon_url: interaction.member.user.displayAvatarURL()
+				},
+				image: {
+					url: i.url
+				},
+				color: client.config.color.default
+			});
 			return interaction.reply({
-				embeds: [embed]
+				embeds: [embed2]
 			});
 		}).catch((e) => {
 			embed.setColor(client.config.color.error)
