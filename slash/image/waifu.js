@@ -15,7 +15,7 @@ module.exports = {
 				icon_url: interaction.member.user.displayAvatarURL()
 			}
 		});
-		client.porn.porn2.sfw.waifu().then((i) => {
+		client.porn.porn1.sfw.waifu().then((i) => {
 			embed.setImage(i.url)
 				.setColor(client.config.color.default);
 			return interaction.reply({
