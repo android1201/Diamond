@@ -100,6 +100,6 @@ module.exports = {
 		barbara: `/sfw/safe/?tags=barbara_(genshin_impact) `,
 		klee: `/sfw/safe/?tags=klee_(genshin_impact)`,
 		amber: `/sfw/safe/?tags=amber_(genshin_impact)`,
-		furry: `/sfw/safe/?tags=furry`,
+		furry: `/sfw/safe/?tags=furry`
 	}
 };
