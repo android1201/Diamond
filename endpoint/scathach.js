@@ -1,5 +1,5 @@
 module.exports = {
-	"gif": {
+	"animated": {
 		"blowjob": "/nsfw/animated/?tags=blowjob",
 		"missionary": "/nsfw/animated/?tags=missionary",
 		"cowgirl": "/nsfw/animated/?tags=cowgirl",
