@@ -5,7 +5,6 @@ const {
 	URL,
 	URLSearchParams
 } = require('url'),
-	baseURL = 'http://192.145.238.5/~pasirm5/v3sca',
 	endpoints = require('../endpoint/scathach.js');
 function getContent(url) {
 	return new Promise((resolve, reject) => {
@@ -36,8 +35,9 @@ function getContent(url) {
 	});
 };
 module.exports = class scathach {
-	constructor() {
-		let self = this;
+	constructor(data = {}) {
+		let self = this,
+			baseURL = data.url ? data.url : 'http://192.145.238.5/~pasirm5/v3sca';
 		self.animated = {};
 		self.nsfw = {};
 		self.sex = {};
