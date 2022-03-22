@@ -3,7 +3,8 @@ module.exports = {
 	description: "Get random waifu image.",
 	botChannelPermissions: ["EMBED_LINKS", "MANAGE_MESSAGES", "SEND_MESSAGES", "READ_MESSAGE_HISTORY"],
 	cooldown: 5,
-	category: "image",
+	category: "sfw",
+	sfw: true
 	run: async (interaction, client) => {
 		var embed = new client.discord.MessageEmbed({
 			author: {
