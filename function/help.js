@@ -11,6 +11,7 @@ module.exports = async (data = {}) => {
 				command = data.client.slash.find(r => r.name === selectedValues[0]);
 			if (selectedValues.includes(command.name)) {
 				data.client.config.function.helpEmbed({
+					client: data.client,
 					channel: data.channel,
 					command: command,
 					embed: data.embed
