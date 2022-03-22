@@ -282,7 +282,22 @@ module.exports = {
 							emoji: emo,
 						});
 					});
-					if (i.values.includes('image')) {
+					const commandRow = row.setComponents(
+						new MessageSelectMenu()
+						.setCustomId(name)
+						.setPlaceholder(name[0].toUpperCase() + name.toLowerCase().slice(1) + ' commands.')
+						.setMinValues(1)
+						.setMaxValues(1)
+						.addOptions(loopArray),
+					);
+					embed.setColor(client.config.color.default)
+						.setDescription(`\`\`\`${emo} Select what command you need help for!\`\`\``);
+					return i.editReply({
+						embeds: [embed],
+						components: [commandRow],
+					});
+				};
+				if (i.values.includes('image')) {
 					var name = 'image',
 						emo = emoji.e11;
 					await i.deferUpdate();
@@ -427,8 +442,23 @@ module.exports = {
 							emoji: emo,
 						});
 					});
-					if (i.values.includes('sfw')) {
-					var name = 'sfw',
+					const commandRow = row.setComponents(
+						new MessageSelectMenu()
+						.setCustomId(name)
+						.setPlaceholder(name[0].toUpperCase() + name.toLowerCase().slice(1) + ' commands.')
+						.setMinValues(1)
+						.setMaxValues(1)
+						.addOptions(loopArray),
+					);
+					embed.setColor(client.config.color.default)
+						.setDescription(`\`\`\`${emo} Select what command you need help for!\`\`\``);
+					return i.editReply({
+						embeds: [embed],
+						components: [commandRow],
+					});
+				};
+				if (i.values.includes('sfw')) {
+					var name = 'nfw',
 						emo = emoji.e10;
 					await i.deferUpdate();
 					const loopArray = [];
