@@ -274,7 +274,6 @@ module.exports = {
 		"xuanzang": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=xuanzang_(fate/grand_order)",
 		"bb": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=bb_(fate)_(all)",
 		"nero": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=nero_claudius_(fate)_(all)",
-
 		"atago": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=atago_(azur_lane)",
 		"takao": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=takao_(azur_lane)",
 		"bremerton": "http://192.145.238.5/~pasirm5/v3sca/sfw/safe/?tags=bremerton_(azur_lane)",
