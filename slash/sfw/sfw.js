@@ -11,20 +11,65 @@ module.exports = {
 		type: 3,
 		required: true,
 		choices: [{
-			name: "Safebooru",
-			value: "safebooru"
+			name: "Abigail",
+			value: "abigail"
 		}, {
-			name: "Twitter",
-			value: "twitter"
+			name: "Amber",
+			value: "amber"
 		}, {
-			name: "Furry",
-			value: "furry"
+			name: "Anastasia",
+			value: "anastasia"
+		}, {
+			name: "Artoria",
+			value: "artoria"
+		}, {
+			name: "Atago",
+			value: "atago"
+		}, {
+			name: "Azur_lane",
+			value: "azur_lane"
+		}, {
+			name: "Barbara",
+			value: "barbara"
+		}, {
+			name: "Bb",
+			value: "bb"
+		}, {
+			name: "Beidou",
+			value: "beidou"
+		}, {
+			name: "Belfast",
+			value: "belfast"
+		}, {
+			name: "Bremerton",
+			value: "bremerton"
+		}, {
+			name: "Consort_yu",
+			value: "consort_yu"
+		}, {
+			name: "Davinci",
+			value: "davinci"
+		}, {
+			name: "Dido",
+			value: "dido"
+		}, {
+			name: "Dota",
+			value: "dota_2"
+		}, {
+			name: "Enterprise",
+			value: "enterprise"
+		}, {
+			name: "Ereshkigal",
+			value: "ereshkigal"
 		}, {
 			name: "Fgo",
 			value: "fgo"
 		}, {
-			name: "Azur_lane",
-			value: "azur_lane"
+			name: "Formidable",
+			value: "formidable"
+		}, {
+			name: "Furry",
+			value: "furry"
 		}, {
 			name: "Genshin_impact",
 			value: "genshin_impact"
@@ -32,59 +77,14 @@ module.exports = {
 			name: "Girls_frontline",
 			value: "girls_frontline"
 		}, {
-			name: "League_of_legends",
-			value: "league_of_legends"
-		}, {
-			name: "Dota_2",
-			value: "dota_2"
-		}, {
-			name: "Scathach",
-			value: "scathach"
-		}, {
-			name: "Raikou",
-			value: "raikou"
-		}, {
-			name: "Jeanne",
-			value: "jeanne"
-		}, {
-			name: "Ereshkigal",
-			value: "ereshkigal"
-		}, {
-			name: "Artoria",
-			value: "artoria"
-		}, {
-			name: "Okita",
-			value: "okita"
-		}, {
-			name: "Kama",
-			value: "kama"
-		}, {
-			name: "Davinci",
-			value: "davinci"
-		}, {
-			name: "Anastasia",
-			value: "anastasia"
-		}, {
-			name: "Saint_martha",
-			value: "saint_martha"
-		}, {
 			name: "Gudako",
 			value: "gudako"
 		}, {
-			name: "Mashu",
-			value: "mashu"
+			name: "Himiko",
+			value: "himiko"
 		}, {
-			name: "Abigail",
-			value: "abigail"
-		}, {
-			name: "Ushiwakamaru",
-			value: "ushiwakamaru"
-		}, {
-			name: "Consort_yu",
-			value: "consort_yu"
-		}, {
-			name: "Mordred",
-			value: "mordred"
+			name: "Hood",
+			value: "hood"
 		}]
 	}],
 	run: async (interaction, client) => {
