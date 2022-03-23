@@ -1,5 +1,5 @@
 module.exports = {
-	name: "sfw",
+	name: "sfw1",
 	description: "Get sfw image.",
 	botChannelPermissions: ["EMBED_LINKS", "SEND_MESSAGES"],
 	cooldown: 5,
