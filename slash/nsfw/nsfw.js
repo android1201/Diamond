@@ -5,7 +5,7 @@ module.exports = {
 	cooldown: 5,
 	category: "nsfw",
 	nsfw: true,
-	options: {
+	options: [{
 		name: "type",
 		description: "Type of nsfw to show.",
 		type: 3,
@@ -157,7 +157,7 @@ module.exports = {
 			value: "bbc"
 		}]
 		*/
-	},
+	}],
 	run: async (interaction, client) => {
 		const type = interaction.options.getString('type');
 		client.porn.porn2.nsfw[type]().then((i) => {
