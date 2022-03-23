@@ -5,7 +5,8 @@ module.exports = async (data = {}) => {
 		Object.keys(endpoints.sfw).forEach(async (i) => {
 			iList.push(i);
 		});
-		var mList = Math.floor(Math.random * iList.length);
+		
+		const mList = iList[Math.floor(Math.random() * iList.length)];
 		data.client.porn.porn2.sfw[mList]().then(i => {
 			var image = i.url ? i.url : i.image,
 				embed = {
