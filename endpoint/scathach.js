@@ -51,7 +51,6 @@ module.exports = {
 	},
 	sfw: {
 		safebooru: `/sfw/safe/`,
-		twitter: `/nsfw/twitter/`,
 		waifu: `/sfw/waifu.php`,
 		fgo: `/sfw/safe/?tags=fate/grand_order`,
 		azur_lane: `/sfw/safe/?tags=azur_lane`,
