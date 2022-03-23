@@ -20,9 +20,6 @@ module.exports = {
 			name: "Kama",
 			value: "kama"
 		}, {
-			name: "Keqing",
-			value: "keqing"
-		}, {
 			name: "Kiara",
 			value: "kiara"
 		}, {
