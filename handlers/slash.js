@@ -1,12 +1,10 @@
 const {
 	glob
-} = require("glob"),
-	{
-	promisify
-} = require("util"),
-	{
-	Client
-} = require("discord.js"),
+} = require("glob"), {
+		promisify
+	} = require("util"), {
+		Client
+	} = require("discord.js"),
 	globPromise = promisify(glob);
 
 /**
@@ -14,8 +12,8 @@ const {
  */
 module.exports = async (client) => {
 	const slash = await globPromise(
-		`${process.cwd()}/slash/*/*.js`
-	),
+			`${process.cwd()}/slash/*/*.js`
+		),
 		arrayOfslash = [];
 	slash.map((value) => {
 		const file = require(value);
@@ -27,19 +25,20 @@ module.exports = async (client) => {
 	});
 	client.on("ready", async () => {
 		// Register for a single guild
-		/* await client.guilds.cache
-		  .get("replace this with your guild id")
-		  .commands.set(arrayOfslash);
-		*/
+		await client.guilds.cache
+			.get(client.config.botserver)
+			.commands.set(arrayOfslash);
 
 		// Register for all the guilds the bot is in
-		async function glob_slash() {
-			try {
-				await client.application.commands.set(arrayOfslash);
-			} catch (e) {};
-		};
-		setInterval(() => {
-			glob_slash();
-		}, 25000);
+		/*
+				async function glob_slash() {
+					try {
+						await client.application.commands.set(arrayOfslash);
+					} catch (e) {};
+				};
+				setInterval(() => {
+					glob_slash();
+				}, 25000);
+		*/
 	});
 };
