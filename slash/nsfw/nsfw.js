@@ -10,6 +10,7 @@ module.exports = {
 		description: "Type of nsfw to show.",
 		type: 3,
 		required: true,
+		/*
 		choices: [{
 			name: "Ahegao",
 			value: "ahegao"
@@ -155,6 +156,7 @@ module.exports = {
 			name: "Bbc",
 			value: "bbc"
 		}]
+		*/
 	},
 	run: async (interaction, client) => {
 		const type = interaction.options.getString('type');
