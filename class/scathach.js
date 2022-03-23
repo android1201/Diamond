@@ -23,19 +23,10 @@ function getContent(url) {
 			});
 			res.on('end', () => {
 				try {
-					const parsedData = JSON.parse(rawData);
-					if (typeof(parsedData.url) !== undefined) {
-						let newPD = JSON.parse({
-							url: parsedData.url
-						});
-						resolve(newPD);
-					}
-					if (typeof(parsedData.url) === undefined) {
-						let newPD = JSON.parse({
-							url: parsedData.image
-						});
-						resolve(newPD);
-					}
+					const parsedData = JSON.parse(rawData),
+						newD = parsedData.url ? parsedData.url : parsedData.image,
+						newPD = JSON.parse(`{ url: newD }`);
+					resolve(newPD);
 				} catch (e) {
 					reject(`Error: ${e.message}`);
 				}
