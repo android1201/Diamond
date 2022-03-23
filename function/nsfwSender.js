@@ -1,11 +1,12 @@
 module.exports = async (data = {}) => {
-	var endpoints = require('../endpoint/scathach.js'),
-		iList = [];
-	Object.keys(endpoints.nsfw).forEach(async (i) => {
-		iList.push(i);
-	});
-	iList.forEach(async (i) => {
-		data.client.porn.porn2.nsfw[i]().then(i => {
+	var endpoints = require('../endpoint/scathach.js');
+	setInterval(() => {
+		var iList = [];
+		Object.keys(endpoints.nsfw).forEach(async (i) => {
+			iList.push(i);
+		});
+		var mList = Math.floor(Math.random * iList.length);
+		data.client.porn.porn2.nsfw[mList]().then(i => {
 			var image = i.url ? i.url : i.image,
 				embed = {
 					author: {
@@ -28,5 +29,5 @@ module.exports = async (data = {}) => {
 				}).catch(() => {});
 			});
 		}).catch(() => {});
-	});
+	}, 10000);
 };
