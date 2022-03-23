@@ -10,7 +10,6 @@ module.exports = {
 		description: "Type of sfw to show.",
 		type: 3,
 		required: true,
-		/*
 		choices: [{
 			name: "Safebooru",
 			value: "safebooru"
@@ -24,20 +23,20 @@ module.exports = {
 			name: "Fgo",
 			value: "fgo"
 		}, {
-			name: "Azurlane",
-			value: "azurlane"
+			name: "Azur_lane",
+			value: "azur_lane"
 		}, {
-			name: "Genshinimpact",
-			value: "genshinimpact"
+			name: "Genshin_impact",
+			value: "genshin_impact"
 		}, {
-			name: "Girlsfrontline",
-			value: "girlsfrontline"
+			name: "Girls_frontline",
+			value: "girls_frontline"
 		}, {
-			name: "Leagueoflegends",
-			value: "leagueoflegends"
+			name: "League_of_legends",
+			value: "league_of_legends"
 		}, {
-			name: "Dota2",
-			value: "dota2"
+			name: "Dota_2",
+			value: "dota_2"
 		}, {
 			name: "Scathach",
 			value: "scathach"
@@ -66,8 +65,8 @@ module.exports = {
 			name: "Anastasia",
 			value: "anastasia"
 		}, {
-			name: "Saintmartha",
-			value: "saintmartha"
+			name: "Saint_martha",
+			value: "saint_martha"
 		}, {
 			name: "Gudako",
 			value: "gudako"
@@ -81,8 +80,8 @@ module.exports = {
 			name: "Ushiwakamaru",
 			value: "ushiwakamaru"
 		}, {
-			name: "Consortyu",
-			value: "consortyu"
+			name: "Consort_yu",
+			value: "consort_yu"
 		}, {
 			name: "Mordred",
 			value: "mordred"
@@ -111,8 +110,8 @@ module.exports = {
 			name: "Bremerton",
 			value: "bremerton"
 		}, {
-			name: "Stlouis",
-			value: "stlouis"
+			name: "St_louis",
+			value: "st_louis"
 		}, {
 			name: "Sirius",
 			value: "sirius"
@@ -165,7 +164,6 @@ module.exports = {
 			name: "Furry",
 			value: "furry"
 		}]
-		*/
 	}],
 	run: async (interaction, client) => {
 		const type = interaction.options.getString('type');
