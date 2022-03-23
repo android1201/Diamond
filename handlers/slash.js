@@ -23,7 +23,7 @@ module.exports = async (client) => {
 		if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
 		arrayOfslash.push(file);
 	});
-	client.on("ready", async () => {
+	client.on("ready", async (client) => {
 		// Register for a single guild
 		await client.guilds.cache
 			.get(client.config.bot.server)
