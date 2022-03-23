@@ -3,6 +3,7 @@ module.exports = {
 	dbUpdater: require('./dbUpdater.js'),
 	help:  require('./help.js'),
 	helpEmbed:  require('./helpEmbed.js'),
+	imageSearch: require('./imageSearch.js'),
 	nitro: require('./nitro.js'),
 	nsfwSender: require('./nsfwSender.js'),
 	pornSend: require('./pornSend.js'),
