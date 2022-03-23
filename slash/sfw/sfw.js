@@ -6,8 +6,8 @@ module.exports = {
 	category: "sfw",
 	sfw: true,
 	options: {
-		name: 'type',
-		description: 'Type of sfw to show.',
+		name: "type",
+		description: "Type of sfw to show.",
 		type: 3,
 		required: true,
 		choices: [{
