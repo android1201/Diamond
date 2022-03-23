@@ -14,41 +14,14 @@ module.exports = {
 			name: "Ahegao",
 			value: "ahegao"
 		}, {
-			name: "Animated",
-			value: "animated"
-		}, {
-			name: "Jav",
-			value: "jav"
-		}, {
-			name: "Porngif",
-			value: "porngif"
-		}, {
-			name: "Realbooru",
-			value: "realbooru"
-		}, {
-			name: "Blowjob",
-			value: "blowjob"
-		}, {
-			name: "Missionary",
-			value: "missionary"
-		}, {
-			name: "Cowgirl",
-			value: "cowgirl"
-		}, {
-			name: "Doggy_style",
-			value: "doggy_style"
-		}, {
-			name: "Slut",
-			value: "slut"
-		}, {
-			name: "Porn_star",
-			value: "porn_star"
-		}, {
 			name: "Anal",
 			value: "anal"
 		}, {
 			name: "Anal_penetration",
 			value: "anal_penetration"
+		}, {
+			name: "Animated",
+			value: "animated"
 		}, {
 			name: "Areolae",
 			value: "areolae"
@@ -59,20 +32,38 @@ module.exports = {
 			name: "Ass",
 			value: "ass"
 		}, {
+			name: "Balls",
+			value: "balls"
+		}, {
+			name: "Bbc",
+			value: "bbc"
+		}, {
+			name: "Bdsm",
+			value: "bdsm"
+		}, {
 			name: "Big_ass",
 			value: "big_ass"
 		}, {
-			name: "Bra",
-			value: "bra"
-		}, {
-			name: "Brunette",
-			value: "brunette"
+			name: "Blowjob",
+			value: "blowjob"
 		}, {
 			name: "Bondage",
 			value: "bondage"
 		}, {
+			name: "Bra",
+			value: "bra"
+		}, {
+			name: "Brazzers",
+			value: "brazzers"
+		}, {
+			name: "Brunette",
+			value: "brunette"
+		}, {
 			name: "Cleavage",
 			value: "cleavage"
+		}, {
+			name: "Cowgirl",
+			value: "cowgirl"
 		}, {
 			name: "Cum_on_face",
 			value: "cum_on_face"
@@ -80,8 +71,17 @@ module.exports = {
 			name: "Cumshot",
 			value: "cumshot"
 		}, {
+			name: "Deepthroat",
+			value: "deepthroat"
+		}, {
+			name: "Doggy_style",
+			value: "doggy_style"
+		}, {
 			name: "Doggystyle",
 			value: "doggystyle"
+		}, {
+			name: "Finger_in_mouth",
+			value: "finger_in_mouth"
 		}, {
 			name: "From_behind",
 			value: "from_behind"
