@@ -10,6 +10,7 @@ module.exports = {
 		description: "Type of sfw to show.",
 		type: 3,
 		required: true,
+		/*
 		choices: [{
 			name: "Safebooru",
 			value: "safebooru"
@@ -164,6 +165,7 @@ module.exports = {
 			name: "Furry",
 			value: "furry"
 		}]
+		*/
 	},
 	run: async (interaction, client) => {
 		const type = interaction.options.getString('type');
