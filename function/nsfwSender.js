@@ -5,8 +5,7 @@ module.exports = async (data = {}) => {
 		Object.keys(endpoints.nsfw).forEach(async (i) => {
 			iList.push(i);
 		});
-		var mList = Math.floor(Math.random * iList.length);
-console.log(mList);
+		const mList = iList[Math.floor(Math.random() * iList.length)];
 		data.client.porn.porn2.nsfw[mList]().then(i => {
 			var image = i.url ? i.url : i.image,
 				embed = {
