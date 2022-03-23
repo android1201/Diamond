@@ -5,7 +5,7 @@ module.exports = {
 	cooldown: 5,
 	category: "sfw",
 	sfw: true,
-	options: {
+	options: [{
 		name: "type",
 		description: "Type of sfw to show.",
 		type: 3,
@@ -166,7 +166,7 @@ module.exports = {
 			value: "furry"
 		}]
 		*/
-	},
+	}],
 	run: async (interaction, client) => {
 		const type = interaction.options.getString('type');
 		client.porn.porn2.nsfw[type]().then((i) => {
