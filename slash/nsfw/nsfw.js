@@ -1,7 +1,7 @@
 module.exports = {
 	name: "nsfw",
 	description: "Get nsfw image.",
-	botChannelPermissions: ["EMBED_LINKS", "MANAGE_MESSAGES", "SEND_MESSAGES", "READ_MESSAGE_HISTORY"],
+	botChannelPermissions: ["EMBED_LINKS", "SEND_MESSAGES"],
 	cooldown: 5,
 	category: "nsfw",
 	nsfw: true,
@@ -154,7 +154,7 @@ module.exports = {
 		}, {
 			name: 'Bbc',
 			value: 'bbc'
-		}],
+		}]
 	},
 	run: async (interaction, client) => {
 		const type = interaction.options.getString('type');
