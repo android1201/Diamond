@@ -10,7 +10,6 @@ module.exports = {
 		description: "Type of nsfw to show.",
 		type: 3,
 		required: true,
-		/*
 		choices: [{
 			name: "Ahegao",
 			value: "ahegao"
@@ -36,20 +35,20 @@ module.exports = {
 			name: "Cowgirl",
 			value: "cowgirl"
 		}, {
-			name: "Doggystyle",
-			value: "doggystyle"
+			name: "Doggy_style",
+			value: "doggy_style"
 		}, {
 			name: "Slut",
 			value: "slut"
 		}, {
-			name: "Pornstar",
-			value: "pornstar"
+			name: "Porn_star",
+			value: "porn_star"
 		}, {
 			name: "Anal",
 			value: "anal"
 		}, {
-			name: "Analpenetration",
-			value: "analpenetration"
+			name: "Anal_penetration",
+			value: "anal_penetration"
 		}, {
 			name: "Areolae",
 			value: "areolae"
@@ -60,8 +59,8 @@ module.exports = {
 			name: "Ass",
 			value: "ass"
 		}, {
-			name: "Bigass",
-			value: "bigass"
+			name: "Big_ass",
+			value: "big_ass"
 		}, {
 			name: "Bra",
 			value: "bra"
@@ -75,8 +74,8 @@ module.exports = {
 			name: "Cleavage",
 			value: "cleavage"
 		}, {
-			name: "Cumonface",
-			value: "cumonface"
+			name: "Cum_on_face",
+			value: "cum_on_face"
 		}, {
 			name: "Cumshot",
 			value: "cumshot"
@@ -84,14 +83,14 @@ module.exports = {
 			name: "Doggystyle",
 			value: "doggystyle"
 		}, {
-			name: "Frombehind",
-			value: "frombehind"
+			name: "From_behind",
+			value: "from_behind"
 		}, {
-			name: "Hugebreasts",
-			value: "hugebreasts"
+			name: "Huge_breasts",
+			value: "huge_breasts"
 		}, {
-			name: "Largepenis",
-			value: "largepenis"
+			name: "Large_penis",
+			value: "large_penis"
 		}, {
 			name: "Milf",
 			value: "milf"
@@ -105,8 +104,8 @@ module.exports = {
 			name: "Oral",
 			value: "oral"
 		}, {
-			name: "Openmouth",
-			value: "openmouth"
+			name: "Open_mouth",
+			value: "open_mouth"
 		}, {
 			name: "Brazzers",
 			value: "brazzers"
@@ -120,8 +119,8 @@ module.exports = {
 			name: "Penis",
 			value: "penis"
 		}, {
-			name: "Removingpanties",
-			value: "removingpanties"
+			name: "Removing_panties",
+			value: "removing_panties"
 		}, {
 			name: "Sexy",
 			value: "sexy"
@@ -141,14 +140,14 @@ module.exports = {
 			name: "Oil",
 			value: "oil"
 		}, {
-			name: "Suckingballs",
-			value: "suckingballs"
+			name: "Sucking_balls",
+			value: "sucking_balls"
 		}, {
 			name: "Bdsm",
 			value: "bdsm"
 		}, {
-			name: "Fingerinmouth",
-			value: "fingerinmouth"
+			name: "Finger_in_mouth",
+			value: "finger_in_mouth"
 		}, {
 			name: "Deepthroat",
 			value: "deepthroat"
@@ -156,7 +155,6 @@ module.exports = {
 			name: "Bbc",
 			value: "bbc"
 		}]
-		*/
 	}],
 	run: async (interaction, client) => {
 		const type = interaction.options.getString('type');
