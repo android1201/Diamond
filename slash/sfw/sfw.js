@@ -11,158 +11,158 @@ module.exports = {
 		type: 3,
 		required: true,
 		choices: [{
-			name: 'Safebooru',
-			value: 'safebooru'
+			name: "Safebooru",
+			value: "safebooru"
 		}, {
-			name: 'Twitter',
-			value: 'twitter'
+			name: "Twitter",
+			value: "twitter"
 		}, {
-			name: 'Waifu',
-			value: 'waifu'
+			name: "Waifu",
+			value: "waifu"
 		}, {
-			name: 'Fgo',
-			value: 'fgo'
+			name: "Fgo",
+			value: "fgo"
 		}, {
-			name: 'Azur_lane',
-			value: 'azur_lane'
+			name: "Azurlane",
+			value: "azurlane"
 		}, {
-			name: 'Genshin_impact',
-			value: 'genshin_impact'
+			name: "Genshinimpact",
+			value: "genshinimpact"
 		}, {
-			name: 'Girls_frontline',
-			value: 'girls_frontline'
+			name: "Girlsfrontline",
+			value: "girlsfrontline"
 		}, {
-			name: 'League_of_legends',
-			value: 'league_of_legends'
+			name: "Leagueoflegends",
+			value: "leagueoflegends"
 		}, {
-			name: 'Dota_2',
-			value: 'dota_2'
+			name: "Dota2",
+			value: "dota2"
 		}, {
-			name: 'Scathach',
-			value: 'scathach'
+			name: "Scathach",
+			value: "scathach"
 		}, {
-			name: 'Raikou',
-			value: 'raikou'
+			name: "Raikou",
+			value: "raikou"
 		}, {
-			name: 'Jeanne',
-			value: 'jeanne'
+			name: "Jeanne",
+			value: "jeanne"
 		}, {
-			name: 'Ereshkigal',
-			value: 'ereshkigal'
+			name: "Ereshkigal",
+			value: "ereshkigal"
 		}, {
-			name: 'Artoria',
-			value: 'artoria'
+			name: "Artoria",
+			value: "artoria"
 		}, {
-			name: 'Okita',
-			value: 'okita'
+			name: "Okita",
+			value: "okita"
 		}, {
-			name: 'Kama',
-			value: 'kama'
+			name: "Kama",
+			value: "kama"
 		}, {
-			name: 'Davinci',
-			value: 'davinci'
+			name: "Davinci",
+			value: "davinci"
 		}, {
-			name: 'Anastasia',
-			value: 'anastasia'
+			name: "Anastasia",
+			value: "anastasia"
 		}, {
-			name: 'Saint_martha',
-			value: 'saint_martha'
+			name: "Saintmartha",
+			value: "saintmartha"
 		}, {
-			name: 'Gudako',
-			value: 'gudako'
+			name: "Gudako",
+			value: "gudako"
 		}, {
-			name: 'Mashu',
-			value: 'mashu'
+			name: "Mashu",
+			value: "mashu"
 		}, {
-			name: 'Abigail',
-			value: 'abigail'
+			name: "Abigail",
+			value: "abigail"
 		}, {
-			name: 'Ushiwakamaru',
-			value: 'ushiwakamaru'
+			name: "Ushiwakamaru",
+			value: "ushiwakamaru"
 		}, {
-			name: 'Consort_yu',
-			value: 'consort_yu'
+			name: "Consortyu",
+			value: "consortyu"
 		}, {
-			name: 'Mordred',
-			value: 'mordred'
+			name: "Mordred",
+			value: "mordred"
 		}, {
-			name: 'Himiko',
-			value: 'himiko'
+			name: "Himiko",
+			value: "himiko"
 		}, {
-			name: 'Kiara',
-			value: 'kiara'
+			name: "Kiara",
+			value: "kiara"
 		}, {
-			name: 'Xuanzang',
-			value: 'xuanzang'
+			name: "Xuanzang",
+			value: "xuanzang"
 		}, {
-			name: 'Bb',
-			value: 'bb'
+			name: "Bb",
+			value: "bb"
 		}, {
-			name: 'Nero',
-			value: 'nero'
+			name: "Nero",
+			value: "nero"
 		}, {
-			name: 'Atago',
-			value: 'atago'
+			name: "Atago",
+			value: "atago"
 		}, {
-			name: 'Takao',
-			value: 'takao'
+			name: "Takao",
+			value: "takao"
 		}, {
-			name: 'Bremerton',
-			value: 'bremerton'
+			name: "Bremerton",
+			value: "bremerton"
 		}, {
-			name: 'St_louis',
-			value: 'st_louis'
+			name: "Stlouis",
+			value: "stlouis"
 		}, {
-			name: 'Sirius',
-			value: 'sirius'
+			name: "Sirius",
+			value: "sirius"
 		}, {
-			name: 'Belfast',
-			value: 'belfast'
+			name: "Belfast",
+			value: "belfast"
 		}, {
-			name: 'Enterprise',
-			value: 'enterprise'
+			name: "Enterprise",
+			value: "enterprise"
 		}, {
-			name: 'Taihou',
-			value: 'taihou'
+			name: "Taihou",
+			value: "taihou"
 		}, {
-			name: 'Dido',
-			value: 'dido'
+			name: "Dido",
+			value: "dido"
 		}, {
-			name: 'Hood',
-			value: 'hood'
+			name: "Hood",
+			value: "hood"
 		}, {
-			name: 'Formidable',
-			value: 'formidable'
+			name: "Formidable",
+			value: "formidable"
 		}, {
-			name: 'Jean',
-			value: 'jean'
+			name: "Jean",
+			value: "jean"
 		}, {
-			name: 'Beidou',
-			value: 'beidou'
+			name: "Beidou",
+			value: "beidou"
 		}, {
-			name: 'Mona',
-			value: 'mona'
+			name: "Mona",
+			value: "mona"
 		}, {
-			name: 'Lumine',
-			value: 'lumine'
+			name: "Lumine",
+			value: "lumine"
 		}, {
-			name: 'Lisa',
-			value: 'lisa'
+			name: "Lisa",
+			value: "lisa"
 		}, {
-			name: 'Keqing',
-			value: 'keqing'
+			name: "Keqing",
+			value: "keqing"
 		}, {
-			name: 'Barbara',
-			value: 'barbara'
+			name: "Barbara",
+			value: "barbara"
 		}, {
-			name: 'Klee',
-			value: 'klee'
+			name: "Klee",
+			value: "klee"
 		}, {
-			name: 'Amber',
-			value: 'amber'
+			name: "Amber",
+			value: "amber"
 		}, {
-			name: 'Furry',
-			value: 'furry'
+			name: "Furry",
+			value: "furry"
 		}]
 	},
 	run: async (interaction, client) => {
