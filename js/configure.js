@@ -6,6 +6,7 @@ module.exports = {
 	},
 	bot: {
 		mongo: process.env.mongo ? process.env.mongo : "",
+		nsfw: ["952998986824953866"],
 		owners: ["952998986824953866"],
 		server: "953691188425285682",
 		status: "STREAMING",
