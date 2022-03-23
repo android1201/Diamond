@@ -15,7 +15,7 @@ module.exports = async (data = {}) => {
 					},
 					timestamp: new Date(),
 					footer: {
-						text: data.client.user.id,
+						text: mList,
 						icon_url: data.client.user.displayAvatarURL()
 					},
 					image: {
