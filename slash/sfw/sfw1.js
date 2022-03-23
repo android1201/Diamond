@@ -77,9 +77,6 @@ module.exports = {
 			name: "Takao",
 			value: "takao"
 		}, {
-			name: "Twitter",
-			value: "twitter"
-		}, {
 			name: "Ushiwakamaru",
 			value: "ushiwakamaru"
 		}, {
