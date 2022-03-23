@@ -7,7 +7,7 @@ module.exports = {
 	sfw: true,
 	run: async (interaction, client) => {
 		const type = interaction.options.getString('type');
-		client.porn.porn2.nsfw[waifu]().then((i) => {
+		client.porn.porn2.nsfw['waifu']().then((i) => {
 			var embed = new client.discord.MessageEmbed({
 				author: {
 					name: interaction.member.user.tag,
