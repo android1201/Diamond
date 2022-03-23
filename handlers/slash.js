@@ -26,7 +26,7 @@ module.exports = async (client) => {
 	client.on("ready", async () => {
 		// Register for a single guild
 		await client.guilds.cache
-			.get(client.config.botserver)
+			.get(client.config.bot.server)
 			.commands.set(arrayOfslash);
 
 		// Register for all the guilds the bot is in
