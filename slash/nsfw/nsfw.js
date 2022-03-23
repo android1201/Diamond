@@ -6,8 +6,8 @@ module.exports = {
 	category: "nsfw",
 	nsfw: true,
 	options: {
-		name: 'type',
-		description: 'Type of nsfw to show.',
+		name: "type",
+		description: "Type of nsfw to show.",
 		type: 3,
 		required: true,
 		choices: [{
