@@ -17,8 +17,8 @@ module.exports = {
 			name: "Twitter",
 			value: "twitter"
 		}, {
-			name: "Waifu",
-			value: "waifu"
+			name: "Furry",
+			value: "furry"
 		}, {
 			name: "Fgo",
 			value: "fgo"
