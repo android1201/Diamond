@@ -11,7 +11,7 @@ module.exports = {
 			var embed = new client.discord.MessageEmbed({
 				author: {
 					name: interaction.member.user.tag,
-					url: i.url
+					url: i.image
 				},
 				timestamp: new Date(),
 				footer: {
@@ -19,7 +19,7 @@ module.exports = {
 					icon_url: interaction.member.user.displayAvatarURL()
 				},
 				image: {
-					url: i.url
+					url: i.image
 				},
 				color: client.config.color.default
 			});
