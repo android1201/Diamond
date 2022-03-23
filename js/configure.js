@@ -9,6 +9,7 @@ module.exports = {
 		nsfw: ["952998986824953866"],
 		owners: ["952998986824953866"],
 		server: "953691188425285682",
+		sfw: ["952998986824953866"],
 		status: "STREAMING",
 		status_message: "%servers% servers and watching over %users% members with %emojis% emojis",
 		stream_url: "https://www.twitch.tv/monstercat/",
