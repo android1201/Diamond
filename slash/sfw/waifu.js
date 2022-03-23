@@ -8,10 +8,11 @@ module.exports = {
 	run: async (interaction, client) => {
 		const type = interaction.options.getString('type');
 		client.porn.porn2.sfw['waifu']().then((i) => {
+			var image = i.url ? i.url : i.image;
 			var embed = new client.discord.MessageEmbed({
 				author: {
 					name: interaction.member.user.tag,
-					url: i.image
+					url: image
 				},
 				timestamp: new Date(),
 				footer: {
@@ -19,7 +20,7 @@ module.exports = {
 					icon_url: interaction.member.user.displayAvatarURL()
 				},
 				image: {
-					url: i.image
+					url: image
 				},
 				color: client.config.color.default
 			});
