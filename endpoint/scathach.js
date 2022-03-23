@@ -95,7 +95,6 @@ module.exports = {
 		mona: `/sfw/safe/?tags=mona_(genshin_impact)`,
 		lumine: `/sfw/safe/?tags=lumine_(genshin_impact)`,
 		lisa: `/sfw/safe/?tags=lisa_(genshin_impact)`,
-		keqing: `/sfw/safe/?tags=keqing`,
 		barbara: `/sfw/safe/?tags=barbara_(genshin_impact) `,
 		klee: `/sfw/safe/?tags=klee_(genshin_impact)`,
 		amber: `/sfw/safe/?tags=amber_(genshin_impact)`,
