@@ -144,7 +144,7 @@ module.exports = {
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
 					if (Commands.size > 25) {
-						loopArray.slice(0, 24);
+						loopArray.slice(0, 25);
 					}
 					Commands.forEach((cmd) => {
 						loopArray.push({
@@ -176,7 +176,7 @@ module.exports = {
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
 					if (Commands.size > 25) {
-						loopArray.slice(0, 24);
+						loopArray.slice(0, 25);
 					}
 					Commands.forEach((cmd) => {
 						loopArray.push({
@@ -208,7 +208,7 @@ module.exports = {
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
 					if (Commands.size > 25) {
-						loopArray.slice(0, 24);
+						loopArray.slice(0, 25);
 					}
 					Commands.forEach((cmd) => {
 						loopArray.push({
@@ -240,7 +240,7 @@ module.exports = {
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
 					if (Commands.size > 25) {
-						loopArray.slice(0, 24);
+						loopArray.slice(0, 25);
 					}
 					Commands.forEach((cmd) => {
 						loopArray.push({
@@ -272,7 +272,7 @@ module.exports = {
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
 					if (Commands.size > 25) {
-						loopArray.slice(0, 24);
+						loopArray.slice(0, 25);
 					}
 					Commands.forEach((cmd) => {
 						loopArray.push({
@@ -304,7 +304,7 @@ module.exports = {
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
 					if (Commands.size > 25) {
-						loopArray.slice(0, 24);
+						loopArray.slice(0, 25);
 					}
 					Commands.forEach((cmd) => {
 						loopArray.push({
@@ -336,7 +336,7 @@ module.exports = {
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
 					if (Commands.size > 25) {
-						loopArray.slice(0, 24);
+						loopArray.slice(0, 25);
 					}
 					Commands.forEach((cmd) => {
 						loopArray.push({
@@ -368,7 +368,7 @@ module.exports = {
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
 					if (Commands.size > 25) {
-						loopArray.slice(0, 24);
+						loopArray.slice(0, 25);
 					}
 					Commands.forEach((cmd) => {
 						loopArray.push({
@@ -400,7 +400,7 @@ module.exports = {
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
 					if (Commands.size > 25) {
-						loopArray.slice(0, 24);
+						loopArray.slice(0, 25);
 					}
 					Commands.forEach((cmd) => {
 						loopArray.push({
@@ -432,7 +432,7 @@ module.exports = {
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
 					if (Commands.size > 25) {
-						loopArray.slice(0, 24);
+						loopArray.slice(0, 25);
 					}
 					Commands.forEach((cmd) => {
 						loopArray.push({
@@ -464,7 +464,7 @@ module.exports = {
 					const loopArray = [];
 					const Commands = client.slash.filter((r) => r.category === name);
 					if (Commands.size > 25) {
-						loopArray.slice(0, 24);
+						loopArray.slice(0, 25);
 					}
 					Commands.forEach((cmd) => {
 						loopArray.push({
