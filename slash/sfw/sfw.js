@@ -1,7 +1,7 @@
 module.exports = {
 	name: "sfw",
 	description: "Get sfw image.",
-	botChannelPermissions: ["EMBED_LINKS", "MANAGE_MESSAGES", "SEND_MESSAGES", "READ_MESSAGE_HISTORY"],
+	botChannelPermissions: ["EMBED_LINKS", "SEND_MESSAGES"],
 	cooldown: 5,
 	category: "sfw",
 	sfw: true,
@@ -163,7 +163,7 @@ module.exports = {
 		}, {
 			name: 'Furry',
 			value: 'furry'
-		}],
+		}]
 	},
 	run: async (interaction, client) => {
 		const type = interaction.options.getString('type');
