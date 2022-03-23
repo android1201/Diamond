@@ -11,8 +11,14 @@ module.exports = {
 		type: 3,
 		required: true,
 		choices: [{
+			name: "Handjob",
+			value: "handjob"
+		}, {
 			name: "Huge_breasts",
 			value: "huge_breasts"
+		}, {
+			name: "Jav",
+			value: "jav"
 		}, {
 			name: "Large_penis",
 			value: "large_penis"
@@ -20,20 +26,23 @@ module.exports = {
 			name: "Milf",
 			value: "milf"
 		}, {
+			name: "Missionary",
+			value: "missionary"
+		}, {
 			name: "Nipples",
 			value: "nipples"
 		}, {
 			name: "Nude",
 			value: "nude"
 		}, {
-			name: "Oral",
-			value: "oral"
+			name: "Oil",
+			value: "oil"
 		}, {
 			name: "Open_mouth",
 			value: "open_mouth"
 		}, {
-			name: "Brazzers",
-			value: "brazzers"
+			name: "Oral",
+			value: "oral"
 		}, {
 			name: "Panties",
 			value: "panties"
@@ -44,6 +53,15 @@ module.exports = {
 			name: "Penis",
 			value: "penis"
 		}, {
+			name: "Porn_star",
+			value: "porn_star"
+		}, {
+			name: "Porngif",
+			value: "porngif"
+		}, {
+			name: "Realbooru",
+			value: "realbooru"
+		}, {
 			name: "Removing_panties",
 			value: "removing_panties"
 		}, {
@@ -53,32 +71,14 @@ module.exports = {
 			name: "Sideboob",
 			value: "sideboob"
 		}, {
+			name: "Slut",
+			value: "slut"
+		}, {
 			name: "Stockings",
 			value: "stockings"
 		}, {
-			name: "Balls",
-			value: "balls"
-		}, {
-			name: "Handjob",
-			value: "handjob"
-		}, {
-			name: "Oil",
-			value: "oil"
-		}, {
 			name: "Sucking_balls",
 			value: "sucking_balls"
-		}, {
-			name: "Bdsm",
-			value: "bdsm"
-		}, {
-			name: "Finger_in_mouth",
-			value: "finger_in_mouth"
-		}, {
-			name: "Deepthroat",
-			value: "deepthroat"
-		}, {
-			name: "Bbc",
-			value: "bbc"
 		}]
 	}],
 	run: async (interaction, client) => {
