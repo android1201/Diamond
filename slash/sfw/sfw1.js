@@ -11,80 +11,80 @@ module.exports = {
 		type: 3,
 		required: true,
 		choices: [{
-			name: "Himiko",
-			value: "himiko"
-		}, {
-			name: "Kiara",
-			value: "kiara"
-		}, {
-			name: "Xuanzang",
-			value: "xuanzang"
-		}, {
-			name: "Bb",
-			value: "bb"
-		}, {
-			name: "Nero",
-			value: "nero"
-		}, {
-			name: "Atago",
-			value: "atago"
-		}, {
-			name: "Takao",
-			value: "takao"
-		}, {
-			name: "Bremerton",
-			value: "bremerton"
-		}, {
-			name: "St_louis",
-			value: "st_louis"
-		}, {
-			name: "Sirius",
-			value: "sirius"
-		}, {
-			name: "Belfast",
-			value: "belfast"
-		}, {
-			name: "Enterprise",
-			value: "enterprise"
-		}, {
-			name: "Taihou",
-			value: "taihou"
-		}, {
-			name: "Dido",
-			value: "dido"
-		}, {
-			name: "Hood",
-			value: "hood"
-		}, {
-			name: "Formidable",
-			value: "formidable"
-		}, {
 			name: "Jean",
 			value: "jean"
 		}, {
-			name: "Beidou",
-			value: "beidou"
+			name: "Jeanne",
+			value: "jeanne"
 		}, {
-			name: "Mona",
-			value: "mona"
-		}, {
-			name: "Lumine",
-			value: "lumine"
-		}, {
-			name: "Lisa",
-			value: "lisa"
+			name: "Kama",
+			value: "kama"
 		}, {
 			name: "Keqing",
 			value: "keqing"
 		}, {
-			name: "Barbara",
-			value: "barbara"
+			name: "Kiara",
+			value: "kiara"
 		}, {
 			name: "Klee",
 			value: "klee"
 		}, {
-			name: "Amber",
-			value: "amber"
+			name: "League_of_legends",
+			value: "league_of_legends"
+		}, {
+			name: "Lisa",
+			value: "lisa"
+		}, {
+			name: "Lumine",
+			value: "lumine"
+		}, {
+			name: "Mashu",
+			value: "mashu"
+		}, {
+			name: "Mona",
+			value: "mona"
+		}, {
+			name: "Mordred",
+			value: "mordred"
+		}, {
+			name: "Nero",
+			value: "nero"
+		}, {
+			name: "Okita",
+			value: "okita"
+		}, {
+			name: "Raikou",
+			value: "raikou"
+		}, {
+			name: "Safebooru",
+			value: "safebooru"
+		}, {
+			name: "Saint_martha",
+			value: "saint_martha"
+		}, {
+			name: "Scathach",
+			value: "scathach"
+		}, {
+			name: "Sirius",
+			value: "sirius"
+		}, {
+			name: "St_louis",
+			value: "st_louis"
+		}, {
+			name: "Taihou",
+			value: "taihou"
+		}, {
+			name: "Takao",
+			value: "takao"
+		}, {
+			name: "Twitter",
+			value: "twitter"
+		}, {
+			name: "Ushiwakamaru",
+			value: "ushiwakamaru"
+		}, {
+			name: "Xuanzang",
+			value: "xuanzang"
 		}]
 	}],
 	run: async (interaction, client) => {
