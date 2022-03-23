@@ -158,7 +158,7 @@ module.exports = {
 	},
 	run: async (interaction, client) => {
 		const type = interaction.options.getString('type');
-		client.porn.porn2.nsfw.[type]().then((i) => {
+		client.porn.porn2.nsfw[type]().then((i) => {
 			var embed = new client.discord.MessageEmbed({
 				author: {
 					name: interaction.member.user.tag,
