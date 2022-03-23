@@ -23,9 +23,7 @@ function getContent(url) {
 			});
 			res.on('end', () => {
 				try {
-					const parsedData = JSON.parse(rawData),
-						newD = parsedData.url ? parsedData.url : parsedData.image,
-						newPD = JSON.parse(`{ url: newD }`);
+					const parsedData = JSON.parse(rawData);
 					resolve(newPD);
 				} catch (e) {
 					reject(`Error: ${e.message}`);
