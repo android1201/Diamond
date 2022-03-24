@@ -78,9 +78,7 @@ client.hub_url = require('./hub_url.js');
 client.player = player;
 client.porn = {
 	porn1: new neko(),
-	porn2: new scathach({
-		url: 'http://192.145.238.5/~pasirm5/v3sca'
-	})
+	porn2: new scathach()
 };
 client.slash = new Discord.Collection();
 /*
