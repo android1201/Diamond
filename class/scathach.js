@@ -1,6 +1,6 @@
 const {
 	get
-} = require('http'), {
+} = require('https'), {
 		URL,
 		URLSearchParams
 	} = require('url'),
