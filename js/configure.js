@@ -6,7 +6,7 @@ module.exports = {
 	},
 	bot: {
 		mongo: process.env.mongo ? process.env.mongo : "",
-		nsfw: ["717644131798876211"],
+		nsfw: [""],
 		owners: ["952998986824953866"],
 		server: "953691188425285682",
 		sfw: ["952998986824953866"],
