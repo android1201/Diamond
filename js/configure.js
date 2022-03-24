@@ -7,9 +7,9 @@ module.exports = {
 	bot: {
 		mongo: process.env.mongo ? process.env.mongo : "",
 		nsfw: [""],
-		owners: ["952998986824953866"],
+		owners: ["939150022115741767"],
 		server: "953691188425285682",
-		sfw: ["952998986824953866"],
+		sfw: [""],
 		status: "STREAMING",
 		status_message: "%servers% servers and watching over %users% members with %emojis% emojis",
 		stream_url: "https://www.twitch.tv/monstercat/",
