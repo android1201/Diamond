@@ -36,7 +36,7 @@ function getContent(url) {
 };
 module.exports = class scathach {
 	constructor(data = {}) {
-		var baseURL = data.url ? data.url : 'http://192.145.238.5/~pasirm5/v3sca';
+		var baseURL = data.url ? data.url : 'https://scathach.redsplit.org/v3';
 		this.nsfw = {};
 		this.sfw = {};
 		Object.keys(endpoints.nsfw).forEach(async (endpoint) => {
