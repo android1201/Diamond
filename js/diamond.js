@@ -48,12 +48,6 @@ var {
 		/*
 		intents: 32767,
 		*/
-	}),
-	{
-		Player
-	} = require("discord-music-player"),
-	player = new Player(client, {
-		leaveOnEmpty: false,
 	});
 /*
  * Variables
@@ -62,7 +56,6 @@ var neko = require('nekos.life'),
 	{
 		scathach
 	} = require('../class/a.js');
-require("discord-player/smoothVolume");
 /*
  * client database
  */
@@ -76,7 +69,6 @@ client.discord = Discord;
 client.events = new Discord.Collection();
 client.functions = client.config.function;
 client.hub_url = require('./hub_url.js');
-client.player = player;
 client.porn = {
 	porn1: new neko(),
 	porn2: new scathach()
