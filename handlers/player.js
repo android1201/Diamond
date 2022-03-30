@@ -1,21 +1,18 @@
 module.exports = async (client) => {
-	const {
-		Player
-	} = require("discord-player");
+	const HttpsProxyAgent = require("https-proxy-agent"),
+		proxy = "http://111.111.111.111:8080",
+		agent = HttpsProxyAgent(proxy),
+		{
+			Player
+		} = require("discord-player");
 	client.player = new Player(client, {
 		leaveOnEmpty: false,
 		leaveOnFinish: false,
-		leaveOnStop: false
+		leaveOnStop: false,
+		ytdlOptions: {
+			requestOptions: {
+				agent
+			}
+		}
 	});
-	client.player
-		.on('channelEmpty', (queue) => {})
-		.on('songAdd', (queue, song) => {})
-		.on('playlistAdd', (queue, playlist) => {})
-		.on('queueDestroyed', (queue) => {})
-		.on('queueEnd', (queue) => {})
-		.on('songChanged', (queue, newSong, oldSong) => {})
-		.on('songFirst', (queue, song) => {})
-		.on('clientDisconnect', (queue) => {})
-		.on('clientUndeafen', (queue) => {})
-		.on('error', (error, queue) => {});
 };
