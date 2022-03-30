@@ -212,7 +212,7 @@ module.exports = async (client,
 			if (command.vc) {
 				const {
 					channel
-				} = message.member.voice;
+				} = interaction.member.voice;
 				if (!channel) {
 					embed.setDescription(`\`\`\`\n${client.config.emoji.warn} You have to be connected to a voice channel before you can use this command!\`\`\``);
 					return interaction.reply({
