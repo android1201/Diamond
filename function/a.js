@@ -1,7 +1,6 @@
 module.exports = {
 	botStatus: require('./botStatus.js'),
 	dbUpdater: require('./dbUpdater.js'),
-	isPlaylist: require('./isPlaylist.js'),
 	help:  require('./help.js'),
 	helpEmbed:  require('./helpEmbed.js'),
 	imageSearch: require('./imageSearch.js'),
