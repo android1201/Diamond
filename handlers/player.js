@@ -3,8 +3,7 @@ module.exports = async (client) => {
 		Player
 	} = require("discord-music-player");
 	client.player = new Player(client, {
-		leaveOnStop: false,
-		timeout: 600000
+		leaveOnStop: false
 	});
 	client.player
 		.on('channelEmpty', (queue) => {})
