@@ -62,6 +62,7 @@ var neko = require('nekos.life'),
 	{
 		scathach
 	} = require('../class/a.js');
+require("discord-player/smoothVolume")(client);
 /*
  * client database
  */
