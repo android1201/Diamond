@@ -5,7 +5,7 @@ module.exports = async (client) => {
 	client.player = new Player(client, {
 		leaveOnEnd: true,
 		leaveOnStop: false,
-		leaveOnEmpty: true,
+		leaveOnEmpty: false,
 		timeout: 600000
 	});
 	client.player
