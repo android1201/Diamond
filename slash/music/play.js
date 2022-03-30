@@ -7,14 +7,6 @@ module.exports = {
 		description: 'The song or playlist name that you want to search for.',
 		type: 3,
 		required: true
-	}, {
-		name: "top",
-		description: "Whether the song should be added to the top of the queue.",
-		type: 5,
-	}, {
-		name: "shuffle",
-		description: "Only applies to playlists. Shuffles the playlist when adding to the queue.",
-		type: 5,
 	}],
 	category: 'music',
 	cooldown: 5,
