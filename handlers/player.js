@@ -1,8 +1,10 @@
 module.exports = async (client) => {
 	const {
 		Player
-	} = require("discord-music-player");
+	} = require("discord-player");
 	client.player = new Player(client, {
+		leaveOnEmpty: false,
+		leaveOnFinish: false,
 		leaveOnStop: false
 	});
 	client.player
