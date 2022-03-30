@@ -10,6 +10,10 @@
   "author": "Devdk",
   "license": "MIT",
   "dependencies": {
+    "@discord-player/downloader": "^3.0.1",
+    "@discord-player/extractor": "^3.0.2",
+    "@discordjs/opus": "^0.6.0",
+    "discord-player": "^5.1.0",
     "@discordjs/builders": "^0.12.0",
     "@discordjs/rest": "^0.1.0-canary.0",
     "axios": "^0.21.2",
@@ -18,7 +22,6 @@
     "discordjs-logger": "^3.0.0",
     "discord-api-types": "^0.27.1",
     "discord-logs": "^2.0.1",
-    "discord-music-player": "^8.3.1",
     "discord-temp-channels": "^3.0.1",
     "discord.js": "^13.6.0",
     "express": "^4.17.2",
