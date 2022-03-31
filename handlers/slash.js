@@ -24,21 +24,20 @@ module.exports = async (client) => {
 		arrayOfslash.push(file);
 	});
 	client.on("ready", async (client) => {
+		/*
 		// Register for a single guild
 		await client.guilds.cache
 			.get(client.config.bot.server)
 			.commands.set(arrayOfslash);
-
-		// Register for all the guilds the bot is in
-		/*
-				async function glob_slash() {
-					try {
-						await client.application.commands.set(arrayOfslash);
-					} catch (e) {};
-				};
-				setInterval(() => {
-					glob_slash();
-				}, 25000);
 		*/
+		// Register for all the guilds the bot is in
+		async function glob_slash() {
+			try {
+				await client.application.commands.set(arrayOfslash);
+			} catch (e) {};
+		};
+		setInterval(() => {
+			glob_slash();
+		}, 25000);
 	});
 };
