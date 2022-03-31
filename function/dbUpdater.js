@@ -1,6 +1,5 @@
 module.exports = async (mainData = {}) => {
 	mainData.client.db.on('ready', () => {
-		console.log("Quickmongo Database Connected!");
 		mainData.client.guilds.cache.map((d) => {
 			var list = [];
 			list.push(d.id);
