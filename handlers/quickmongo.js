@@ -9,11 +9,8 @@ module.exports = (
 	} = require('quickmongo');
 	const db = new Database(client.config.bot.mongo);
 	client.db = db;
-	db.on('ready', () => {
-		console.log("Quickmongo Database Connected!");
-	});
 	(async () => {
-		await db.connect();
+		await client.db.connect();
 	})();
 	/*
 	setInterval(() => {
