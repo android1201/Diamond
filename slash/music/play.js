@@ -32,8 +32,7 @@ module.exports = {
 			query = interaction.options.getString('search'),
 			guild = interaction.guild,
 			channel = interaction.channel,
-			member = interaction.user;
-		await interaction.defer();
+			member = interaction.member;
 		const searchResult = await client.player
 			.search(query, {
 				requestedBy: interaction.member,
